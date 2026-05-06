@@ -37,7 +37,7 @@
       background-image: linear-gradient(var(--grid) 1px, transparent 1px),
                         linear-gradient(90deg, var(--grid) 1px, transparent 1px);
       background-size: 40px 40px;
-      transition: background-color 0.1s, color 0.1s; /* Faster transition for ADHD vibe */
+      transition: background-color 0.1s, color 0.1s;
     }
 
     h1, h2, h3, h4 {
@@ -171,33 +171,6 @@
       box-shadow: 2px 2px 0px var(--shadow-color);
     }
 
-    .marquee {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      background: var(--cyan);
-      color: #000;
-      border-top: 5px solid var(--fg);
-      border-bottom: 5px solid var(--fg);
-      padding: 10px 0;
-      font-family: 'Montserrat';
-      font-weight: 900;
-      font-size: 2rem;
-      position: absolute;
-      top: 5%;
-      z-index: -1;
-      transform: rotate(-2deg);
-    }
-    .marquee-content {
-      display: inline-block;
-      animation: scroll 5s linear infinite; /* Faster scroll */
-    }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Dense text styles */
     .dense-text {
       font-size: 1.2rem;
       line-height: 1.4;
@@ -206,7 +179,6 @@
     }
     .highlight { background: var(--pink); color: #fff; padding: 2px 6px; font-weight: bold; }
     
-    /* ADHD Grid layouts */
     .adhd-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -231,399 +203,215 @@
     </div>
   </div>
 
-  <!-- 2. ADHD DISCLAIMER -->
+  <!-- 2. THE PROBLEM (Disclaimer + Graveyard) -->
   <div class="slide">
-    <h1 style="font-size: 8vw; background: red; color: #fff; padding: 30px; border: 10px solid #000; box-shadow: 20px 20px 0px #000; transform: rotate(2deg);">DISCLAIMER</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; text-align: center; margin-top: 40px; transform: rotate(-1deg);">
-      <h2 style="font-size: 3rem; color: red;">THIS PRESENTATION MOVES FAST.</h2>
-      <p class="dense-text" style="font-size: 1.8rem; margin-top: 20px;">We built a hyper-dense, text-heavy, high-speed deck. It is designed for maximum information density. Blink and you miss the alpha. ADHD vibes only. ⚡</p>
-    </div>
-  </div>
-
-  <!-- 3. THE DATA GRAVEYARD -->
-  <div class="slide">
-    <h1 style="font-size: 6vw; background: var(--fg); color: var(--bg); padding: 20px 40px; box-shadow: 16px 16px 0px var(--orange); margin-bottom: 60px; transform: rotate(-1deg);">THE DATA GRAVEYARD</h1>
+    <div class="tape" style="top: 5%; background: red; color: white;">WARNING: HIGH DENSITY DECK</div>
+    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px; margin-bottom: 20px; box-shadow: 16px 16px 0px var(--orange);">THE DATA GRAVEYARD</h1>
     <div class="adhd-grid">
-      <div class="brutal-box solid" style="transform: translateY(20px);">
+      <div class="brutal-box solid">
         <h2 style="color: var(--orange);">200+ PAGE FILINGS</h2>
-        <p class="dense-text">10-Ks are literally designed to bury critical signals under legal jargon. Nobody reads page 184.</p>
+        <p class="dense-text">10-Ks are designed to bury critical signals. Nobody reads page 184.</p>
       </div>
-      <div class="brutal-box color-bg" style="background: var(--yellow); transform: translateY(-10px);">
-        <h2 style="color: #000;">MANUAL ANALYSIS</h2>
-        <p class="dense-text">Ctrl+F is a joke. Human analysts are slow, tired, and miss overlapping context.</p>
+      <div class="brutal-box color-bg" style="background: var(--yellow);">
+        <h2 style="color: #000;">MANUAL IS MID</h2>
+        <p class="dense-text">Boomers print 10-Qs with highlighters. Ctrl+F is a joke. Human analysts get tired and miss context.</p>
       </div>
-      <div class="brutal-box" style="background: #000; color: #fff; transform: translateY(30px); border-color: var(--orange);">
-        <h2 style="color: var(--orange);">RISK: CRITICAL</h2>
+      <div class="brutal-box" style="background: #000; color: #fff; border-color: var(--orange);">
+        <h2 style="color: var(--orange);">RISK = MILLIONS</h2>
         <p class="dense-text" style="color: var(--lime);">Missing a red flag costs millions. Guessing costs billions. You need a machine.</p>
       </div>
     </div>
   </div>
 
-  <!-- 4. WALL STREET IS SLOW -->
+  <!-- 3. MERIDIAN VS WRAPPERS -->
   <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--pink); color: #000; padding: 20px;">WALL STREET IS SLOW</h1>
-    <div class="brutal-box color-bg" style="background: var(--lime); width: 80%; max-width: 1000px; margin-top: 40px; font-size: 2rem; border-width: 8px;">
-      <p>Boomers are literally printing out 10-Qs with highlighters. 🖍️</p>
-      <p>Hedge funds spend thousands on offshore analysts just to extract basic EBITDA tables.</p>
-      <p><strong>It's inefficient. It's expensive. It's mid.</strong></p>
-    </div>
-  </div>
-
-  <!-- 5. THE DELULU COMPETITION -->
-  <div class="slide">
-    <div class="tape" style="top: 10%; background: red; color: white;">IT'S GIVING HALLUCINATION</div>
-    <h1 style="font-size: 5vw; background: red; color: #fff; padding: 20px 40px; box-shadow: 16px 16px 0px var(--fg); margin-bottom: 40px;">NOT ANOTHER "AI SLOP" WRAPPER</h1>
-    <div style="display: flex; gap: 40px; width: 100%; max-width: 1300px;">
-      <div class="brutal-box solid" style="flex: 1; border: 8px dashed red; transform: rotate(-2deg);">
-        <h2 style="font-size: 2.5rem; color: red; margin-bottom: 20px; text-decoration: line-through;">THE COMPETITION</h2>
-        <ul class="dense-text" style="font-size: 1.5rem; line-height: 1.8;">
-          <li>❌ Prompts ChatGPT blindly. No cap, it's lazy.</li>
+    <div class="tape" style="top: 5%; background: red; color: white;">IT'S GIVING HALLUCINATION</div>
+    <h1 style="font-size: 4vw; background: red; color: #fff; padding: 10px; margin-bottom: 20px;">NOT ANOTHER "AI SLOP" WRAPPER</h1>
+    <div style="display: flex; gap: 20px; width: 100%; max-width: 1400px;">
+      <div class="brutal-box solid" style="flex: 1; border: 8px dashed red;">
+        <h2 style="color: red; text-decoration: line-through;">THE "CHATPDF" PROBLEM</h2>
+        <p class="dense-text">They shove 200 pages into PyPDF2, strip formatting, and dump 100k tokens into an LLM.</p>
+        <ul class="dense-text">
+          <li>❌ Tables become unreadable text soup.</li>
+          <li>❌ LLMs get "Lost in the Middle".</li>
           <li>❌ "Trust me bro" hallucinated numbers.</li>
-          <li>❌ Completely obliterates financial tables.</li>
-          <li>❌ Generic corporate "vibes-based" finance.</li>
-          <li>❌ Zero citations. Basically delulu.</li>
         </ul>
       </div>
-      <div style="font-size: 6rem; display: flex; align-items: center; font-weight: 900;">VS</div>
-      <div class="brutal-box color-bg" style="flex: 1; background: var(--lime); border: 8px solid #000; transform: rotate(1deg);">
-        <h2 style="font-size: 3rem; color: #000; margin-bottom: 20px; background: #fff; display: inline-block; padding: 5px;">MERIDIAN</h2>
-        <ul class="dense-text" style="font-size: 1.5rem; line-height: 1.8; font-weight: bold;">
-          <li>⚡ Deterministic Layout-Aware Parsing.</li>
-          <li>⚡ Strict mathematical constraints.</li>
-          <li>⚡ Document-grounded RAG retrieval.</li>
+      <div style="font-size: 3rem; display: flex; align-items: center; font-weight: 900;">VS</div>
+      <div class="brutal-box color-bg" style="flex: 1.5; background: var(--lime); border: 8px solid #000;">
+        <h2 style="background: #fff; display: inline-block; padding: 5px;">MERIDIAN: DETERMINISTIC RAG</h2>
+        <ul class="dense-text" style="font-weight: bold; font-size: 1.4rem;">
+          <li>⚡ Layout-Aware Parsing (x/y coordinates).</li>
+          <li>⚡ Strict vector retrieval constraints.</li>
+          <li>⚡ Document-grounded only. No hallucination.</li>
           <li>⚡ Exact Page & Paragraph citations.</li>
-          <li>⚡ High-speed Brutalist precision. Big W.</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- 6. COMPETITION DEEP DIVE: WHY WRAPPERS SUCK -->
+  <!-- 4. WHAT IS MERIDIAN? (RAG MATH) -->
   <div class="slide">
-    <h1 style="font-size: 4vw; background: var(--orange); color: #000; padding: 20px; border: 6px solid #000;">WHY PDF WRAPPERS SUCK</h1>
-    <div class="brutal-box solid" style="max-width: 1200px; margin-top: 40px;">
-      <h2 style="color: red; margin-bottom: 20px;">THE "CHATPDF" PROBLEM</h2>
-      <p class="dense-text">Most "AI Finance" tools just take your 200-page PDF, shove it into PyPDF2, strip all the formatting, and dump 100,000 tokens into an LLM context window.</p>
-      <p class="dense-text"><strong>WHAT HAPPENS?</strong></p>
-      <ul class="dense-text">
-        <li>The LLM loses focus (Lost in the Middle phenomenon).</li>
-        <li>Tables become unreadable text soup.</li>
-        <li>It hallucinates numbers because the context is too noisy.</li>
-      </ul>
-      <div style="background: red; color: #fff; padding: 10px; text-align: center; font-weight: bold; font-size: 2rem; margin-top: 20px;">WE FIXED THIS.</div>
+    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px; margin-bottom: 20px;">RAG VS ZERO-SHOT MATH</h1>
+    <div class="brutal-box color-bg" style="background: var(--yellow); max-width: 1200px; font-size: 1.2rem; border-width: 6px; margin-bottom: 20px;">
+      <p>Meridian is a <strong>deterministic, multi-agent Retrieval-Augmented Generation (RAG) platform</strong>. We don't ask the AI to guess. We explicitly force it to <span class="highlight">retrieve, verify, and cite.</span></p>
     </div>
-  </div>
-
-  <!-- 7. ENTER MERIDIAN -->
-  <div class="slide">
-    <h1 style="font-size: 8vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 40px; box-shadow: 30px 30px 0px var(--lime); text-align: center;">ENTER<br>MERIDIAN</h1>
-  </div>
-
-  <!-- 8. WHAT IS MERIDIAN? -->
-  <div class="slide">
-    <h1 style="font-size: 4vw; margin-bottom: 30px; background: var(--pink); color: #000; padding: 10px;">WHAT IS MERIDIAN?</h1>
-    <div class="brutal-box color-bg" style="background: var(--yellow); max-width: 1000px; font-size: 1.8rem; line-height: 1.6; border-width: 8px; transform: rotate(-1deg);">
-      <p>Meridian is a <strong>deterministic, multi-agent Retrieval-Augmented Generation (RAG) platform</strong> tailored exclusively for extreme-precision financial extraction.</p>
-      <p>We don't ask the AI to think. We ask the AI to <span class="highlight">retrieve, verify, and cite.</span></p>
-    </div>
-  </div>
-
-  <!-- 9. WHY RAG? -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--orange); color: #000; padding: 20px; box-shadow: 16px 16px 0px var(--fg); margin-bottom: 40px; transform: rotate(-2deg);">WHY RAG? (NOT "NORMAL" AI)</h1>
-    <div class="adhd-grid">
-      <div class="brutal-box solid">
-        <h2 style="font-size: 2rem; border-bottom: 4px solid var(--fg); padding-bottom: 10px;">NORMAL LLM (ZERO-SHOT)</h2>
-        <p class="dense-text">You ask ChatGPT for NVIDIA's Q4 revenue. It guesses based on what it read on Reddit 8 months ago. It sounds confident, but the number is completely made up.</p>
-        <div style="background: red; color: #fff; padding: 10px; text-align: center; font-weight: bold; font-size: 2rem; margin-top: 20px;">MASSIVE L</div>
-      </div>
-      <div class="brutal-box color-bg" style="background: var(--cyan);">
-        <h2 style="font-size: 2rem; border-bottom: 4px solid #000; padding-bottom: 10px;">RAG (MERIDIAN)</h2>
-        <p class="dense-text">Retrieval-Augmented Generation. We forcefully feed the AI only the exact PDF chunks you uploaded. We constrain its brain. If it's not in the PDF, it says "I don't know."</p>
-        <div style="background: var(--lime); color: #000; padding: 10px; text-align: center; font-weight: bold; font-size: 2rem; margin-top: 20px;">MASSIVE W</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10. RAG VS ZERO-SHOT MATH -->
-  <div class="slide">
-    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 15px;">THE MATH: RAG VS ZERO-SHOT</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 30px;">
-      <pre class="dense-text" style="font-size: 1.5rem; margin: 0; padding: 20px; background: #eee; border: 4px solid #000;">
-PROMPT: "What is the net income?"
-
-[ZERO-SHOT LLM]
-Context Window: ∅ 
-Weights: P(Net Income = $5B | "Apple") = 0.8
+    <div style="display: flex; gap: 20px; width: 100%; max-width: 1200px;">
+      <div class="brutal-box solid" style="flex: 1; border-color: red;">
+        <h2 style="color: red;">ZERO-SHOT (CHATGPT)</h2>
+        <pre class="dense-text" style="background: #eee; padding: 10px; border: 2px solid #ccc;">Context Window: ∅ 
+Weights: P(Income=$5B) = 0.8
 Result: $5B (Hallucination)
-
-[MERIDIAN RAG]
-Context Window: {chunk_id: 842, text: "Net income was $2.1B", page: 12}
-Prompt: "Extract net income ONLY from Context Window."
-Result: $2.1B (Verified, Page 12)
-      </pre>
-    </div>
-  </div>
-
-  <!-- 11. ARCHITECTURE BLUEPRINT -->
-  <div class="slide">
-    <h1 style="font-size: 4vw; margin-bottom: 40px; text-decoration: underline; text-decoration-thickness: 10px; text-decoration-color: var(--pink);">THE ARCHITECTURE BLUEPRINT</h1>
-    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; font-weight: bold; font-size: 1.2vw; width: 100%; max-width: 900px;">
-      <div class="brutal-box color-bg" style="background: var(--lime); padding: 10px 20px; width: 80%; text-align: center;">1. PDF Upload (pdfplumber)</div>
-      <div style="font-size: 1.5rem;">↓</div>
-      <div class="brutal-box color-bg" style="background: var(--cyan); padding: 10px 20px; width: 80%; text-align: center;">2. Layout-Aware Parsing</div>
-      <div style="font-size: 1.5rem;">↓</div>
-      <div class="brutal-box solid" style="padding: 10px 20px; width: 80%; text-align: center; border-style: dashed;">3. Semantic Chunking (Overlap 200 tokens)</div>
-      <div style="font-size: 1.5rem;">↓</div>
-      <div class="brutal-box color-bg" style="background: var(--yellow); padding: 10px 20px; width: 80%; text-align: center;">4. Vector DB (FAISS) & Metadata</div>
-      <div style="font-size: 1.5rem;">↓</div>
-      <div class="brutal-box color-bg" style="background: var(--pink); padding: 10px 20px; width: 80%; text-align: center;">5. Multi-Agent Retrieval (Gemini 2.5)</div>
-      <div style="font-size: 1.5rem;">↓</div>
-      <div class="brutal-box" style="background: #000; color: #fff; padding: 20px 30px; font-size: 2vw; box-shadow: 12px 12px 0px var(--lime); width: 100%; text-align: center; transform: rotate(1deg);">
-        CITATION-GROUNDED INTELLIGENCE
+        </pre>
+        <div style="background: red; color: #fff; padding: 5px; text-align: center; font-weight: bold;">MASSIVE L</div>
+      </div>
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--cyan);">
+        <h2 style="color: #000;">MERIDIAN RAG</h2>
+        <pre class="dense-text" style="background: #fff; padding: 10px; border: 2px solid #000;">Context: {chunk: 842, pg: 12}
+Prompt: "Extract ONLY from Context"
+Result: $2.1B (Verified)
+        </pre>
+        <div style="background: var(--lime); color: #000; padding: 5px; text-align: center; font-weight: bold;">MASSIVE W</div>
       </div>
     </div>
   </div>
 
-  <!-- 12. STEP 1: INGESTION -->
+  <!-- 5. ARCHITECTURE & STACK -->
   <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--cyan); color: #000; padding: 10px; border: 6px solid #000;">STEP 1: INGESTION</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px; transform: rotate(-1deg);">
-      <h2 style="margin-bottom: 20px;">PDFPLUMBER OVER PYPDF2</h2>
-      <p class="dense-text">We don't just extract strings. We extract bounding boxes. We map every single character's X/Y coordinate on the page.</p>
-      <p class="dense-text">Why? Because if you don't know exactly where the text is, you can't rebuild tables, and you can't tell the user "This number came from Page 42, Top Left."</p>
-      <p class="dense-text"><span class="highlight">Receipts start at the ingestion layer.</span></p>
-    </div>
-  </div>
-
-  <!-- 13. STEP 2: LAYOUT-AWARE PARSING -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--yellow); color: #000; padding: 10px; border: 6px solid #000;">STEP 2: LAYOUT-AWARE PARSING</h1>
-    <div class="adhd-grid" style="margin-top: 40px;">
-      <div class="brutal-box solid">
-        <h2>THE NARRATIVE TEXT</h2>
-        <p class="dense-text">Standard paragraphs are grouped. Headers are attached as metadata. If a paragraph is under a "RISK FACTORS" header, the AI knows its context automatically.</p>
+    <h1 style="font-size: 4vw; margin-bottom: 20px; text-decoration: underline; text-decoration-thickness: 10px; text-decoration-color: var(--pink);">ARCHITECTURE & TECH STACK</h1>
+    <div style="display: flex; width: 100%; max-width: 1400px; gap: 40px; align-items: center;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 5px; font-weight: bold; align-items: center; font-size: 1.2rem;">
+        <div class="brutal-box color-bg" style="background: var(--lime); padding: 10px; width: 100%; text-align: center;">1. pdfplumber (Ingestion)</div>
+        <div>↓</div>
+        <div class="brutal-box color-bg" style="background: var(--cyan); padding: 10px; width: 100%; text-align: center;">2. Layout-Aware Parsing</div>
+        <div>↓</div>
+        <div class="brutal-box solid" style="padding: 10px; width: 100%; text-align: center; border-style: dashed;">3. Semantic Chunking</div>
+        <div>↓</div>
+        <div class="brutal-box color-bg" style="background: var(--yellow); padding: 10px; width: 100%; text-align: center;">4. Vector DB (FAISS)</div>
+        <div>↓</div>
+        <div class="brutal-box color-bg" style="background: var(--pink); padding: 10px; width: 100%; text-align: center;">5. Gemini 2.5 Multi-Agent</div>
       </div>
-      <div class="brutal-box solid" style="border-color: var(--pink);">
-        <h2>THE TABULAR DATA</h2>
-        <p class="dense-text">Rows and columns are strictly preserved. We convert grid structures into Markdown tables *before* embedding, ensuring the LLM sees the X/Y relationship.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 14. SOLVING THE TABLE PROBLEM: VISUAL -->
-  <div class="slide">
-    <h1 style="font-size: 4vw; margin-bottom: 20px; background: var(--orange); color: #000; padding: 20px; border: 6px solid #000; box-shadow: 12px 12px 0px var(--shadow-color); transform: rotate(-1deg);">SOLVING THE TABLE PROBLEM</h1>
-    <div style="display: flex; gap: 40px; margin-top: 20px; width: 100%; max-width: 1200px;">
-      <div class="brutal-box solid" style="flex: 1; border-color: red; box-shadow: 12px 12px 0px red; transform: rotate(-2deg);">
-        <h3 style="margin-bottom: 10px; color: red;">[ BEFORE ] BROKEN</h3>
-        <div style="font-family: monospace; color: red; background: rgba(255,0,0,0.1); padding: 10px; border: 2px dashed red;">
-          Revenue... 500 Cost... Margin... 400 20%
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+        <div class="brutal-card" style="background: #3776AB; color: #fff;">
+          <h3>🐍 BACKEND: PYTHON & FASTAPI</h3>
+          <p class="dense-text">Heavy data lifting, async uvicorn routing, Pydantic validation. CPU-optimized PyTorch.</p>
+        </div>
+        <div class="brutal-card" style="background: #61DAFB; color: #000;">
+          <h3>⚛️ FRONTEND: REACT & VITE</h3>
+          <p class="dense-text">Instant HMR, strict Brutalist Tailwind utility classes, Framer Motion for ADHD pacing.</p>
         </div>
       </div>
-      <div style="font-size: 3rem; display: flex; align-items: center;">➔</div>
-      <div class="brutal-box solid" style="flex: 1.5; border-color: green; box-shadow: 12px 12px 0px green; transform: rotate(1deg);">
-        <h3 style="margin-bottom: 10px; color: green;">[ AFTER ] MARKDOWN</h3>
-        <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 1.2rem; background: var(--bg);" border="4">
-          <tr style="background: var(--fg); color: var(--bg);"><th style="padding: 5px;">Metric</th><th style="padding: 5px;">Value</th></tr>
-          <tr><td style="padding: 5px; border-bottom: 2px solid var(--fg);">Revenue</td><td style="padding: 5px; border-bottom: 2px solid var(--fg);">$500M</td></tr>
-          <tr><td style="padding: 5px;">Margin</td><td style="padding: 5px;">20%</td></tr>
+    </div>
+  </div>
+
+  <!-- 6. INGESTION & TABLES -->
+  <div class="slide">
+    <h1 style="font-size: 4vw; background: var(--orange); color: #000; padding: 10px; border: 6px solid #000;">INGESTION & LAYOUT PARSING</h1>
+    <div class="adhd-grid" style="margin-top: 20px;">
+      <div class="brutal-box solid">
+        <h2>PDFPLUMBER (X/Y COORDS)</h2>
+        <p class="dense-text">We extract bounding boxes. Every character's X/Y coordinate is mapped so the AI knows exactly where text is located. Receipts start here.</p>
+      </div>
+      <div class="brutal-box color-bg" style="background: var(--cyan);">
+        <h2>NARRATIVE METADATA</h2>
+        <p class="dense-text">Headers are attached to chunks. If text falls under "RISK FACTORS", the AI knows its context automatically before embedding.</p>
+      </div>
+    </div>
+    <div class="brutal-box solid" style="width: 100%; max-width: 1400px; margin-top: 20px; display: flex; gap: 20px; align-items: center;">
+      <div style="flex: 1; border: 4px dashed red; padding: 10px;">
+        <h3 style="color: red; margin-bottom: 10px;">[ BROKEN ] PyPDF2</h3>
+        <span style="font-family: monospace; color: red;">Revenue... 500 Margin... 20%</span>
+      </div>
+      <div style="font-size: 3rem;">➔</div>
+      <div style="flex: 1.5; border: 4px solid green; padding: 10px; background: var(--bg);">
+        <h3 style="color: green; margin-bottom: 10px;">[ FIXED ] MARKDOWN TABLES</h3>
+        <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 1.2rem;" border="2">
+          <tr><th style="background:var(--fg);color:var(--bg); padding:5px;">Metric</th><th style="background:var(--fg);color:var(--bg); padding:5px;">Value</th></tr>
+          <tr><td style="padding:5px;">Revenue</td><td style="padding:5px;">$500M</td></tr>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- 15. STEP 3: SEMANTIC CHUNKING -->
+  <!-- 7. CHUNKING & FAISS -->
   <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--lime); color: #000; padding: 10px; border: 6px solid #000;">STEP 3: SEMANTIC CHUNKING</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <h2 style="margin-bottom: 20px;">1000 TOKENS / 200 OVERLAP</h2>
-      <p class="dense-text">We don't cut paragraphs in half. We use semantic boundaries (newlines, periods). </p>
-      <p class="dense-text"><strong>Why overlap?</strong> Because if a sentence says "Consequently, it grew by 15%", and the previous chunk has the word "Revenue", an overlap ensures "Revenue grew by 15%" stays in the same context block.</p>
-      <div class="terminal" style="margin-top: 20px; font-size: 1rem; padding: 10px;">
-        > chunk_size = 1000<br>
-        > overlap = 200<br>
-        > chunking_status: OPTIMIZED
-      </div>
-    </div>
-  </div>
-
-  <!-- 16. STEP 4: EMBEDDINGS -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--pink); color: #000; padding: 10px; border: 6px solid #000;">STEP 4: EMBEDDINGS</h1>
-    <div class="adhd-grid" style="margin-top: 40px;">
+    <h1 style="font-size: 4vw; background: var(--pink); color: #000; padding: 10px; border: 6px solid #000;">EMBEDDINGS & VECTOR SEARCH</h1>
+    <div class="adhd-grid" style="margin-top: 20px;">
       <div class="brutal-box solid">
-        <h2>PYTORCH & SENTENCE TRANSFORMERS</h2>
-        <p class="dense-text">We convert every chunk of text into a high-dimensional mathematical vector (an embedding). Words with similar meanings have vectors close to each other.</p>
-      </div>
-      <div class="brutal-box color-bg" style="background: var(--cyan);">
-        <h2>CPU OPTIMIZED</h2>
-        <p class="dense-text">We explicitly compile PyTorch for CPU-only to run within Render's ruthless 512MB RAM free-tier limit. No heavy CUDA binaries crashing the server. Lean. Mean.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 17. THE VECTOR DB: FAISS -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px; border: 6px solid var(--lime); box-shadow: 16px 16px 0px var(--lime);">THE VECTOR DB: FAISS</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px; transform: rotate(1deg);">
-      <h2 style="margin-bottom: 20px;">FACEBOOK AI SIMILARITY SEARCH</h2>
-      <p class="dense-text">Why FAISS? Because we don't need a bloated cloud database for a single-session PDF analysis.</p>
-      <p class="dense-text">FAISS builds an in-memory index of our vectors. When you ask "What are the risks?", it performs an L2 distance search across thousands of chunks in literally <span class="highlight">milliseconds.</span></p>
-    </div>
-  </div>
-
-  <!-- 18. METADATA FILTERING -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--yellow); color: #000; padding: 10px; border: 6px solid #000;">METADATA FILTERING</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <p class="dense-text">When we do Multi-Document Smackdown (NVIDIA vs AMD), we don't want their vectors mixing.</p>
-      <p class="dense-text">Every chunk is tagged with metadata: <code>{ company: "NVIDIA", year: 2024, page: 14 }</code></p>
-      <p class="dense-text">We perform <strong>Namespaced Retrieval</strong>. The AI only fetches NVIDIA vectors when answering about NVIDIA.</p>
-      <div style="background: #000; color: var(--lime); padding: 10px; font-family: monospace; font-size: 1.5rem; margin-top: 20px; text-align: center;">NO CROSS-CONTAMINATION.</div>
-    </div>
-  </div>
-
-  <!-- 19. THE BRAIN: GEMINI 2.5 FLASH -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: #4285F4; color: #fff; padding: 10px; border: 6px solid #000;">THE BRAIN: GEMINI 2.5 FLASH</h1>
-    <div class="adhd-grid" style="margin-top: 40px;">
-      <div class="brutal-box solid">
-        <h2>WHY GOOGLE GEMINI?</h2>
-        <p class="dense-text">1. Speed: Flash is brutally fast.<br>2. Context: Huge context window allows us to feed it massive chunks of FAISS retrieval data without dropping context.</p>
+        <h2>SEMANTIC CHUNKING</h2>
+        <p class="dense-text">1000 tokens with 200 overlap. Ensures sentences like "Consequently, it grew 15%" stay semantically connected to "Revenue" in the previous chunk.</p>
       </div>
       <div class="brutal-box color-bg" style="background: var(--lime);">
-        <h2>PROMPT ENGINEERING</h2>
-        <p class="dense-text">We wrap every user query in a system prompt that explicitly states: "You are a financial analyst. ONLY use the provided context. If it's not there, say you don't know."</p>
+        <h2>CPU PYTORCH</h2>
+        <p class="dense-text">Explicitly compiled SentenceTransformers for CPU to run within Render's ruthless 512MB RAM free-tier. Lean and mean.</p>
+      </div>
+      <div class="brutal-box solid" style="border: 6px solid var(--fg);">
+        <h2>FAISS (IN-MEMORY DB)</h2>
+        <p class="dense-text">L2 distance similarity search in milliseconds. Filtered by metadata (`company == "NVIDIA"`) to prevent cross-contamination.</p>
       </div>
     </div>
   </div>
 
-  <!-- 20. THE ENGINE ROOM: PYTHON & FASTAPI -->
+  <!-- 8. THE BRAIN: GEMINI & PROMPTS -->
   <div class="slide">
-    <div class="tape" style="top: 10%; background: var(--fg); color: var(--bg); border: 8px solid var(--bg);">THE ENGINE ROOM</div>
-    <h1 style="font-size: 5vw; margin-bottom: 40px;">TECH STACK: BACKEND</h1>
-    <div class="adhd-grid">
-      <div class="brutal-card" style="background: #3776AB; color: #fff;">
-        <h1>PYTHON 3</h1>
-        <p>The heavy lifter. Parses nasty PDFs and does the complex math.</p>
-      </div>
-      <div class="brutal-card" style="background: #009688; color: #fff; transform: rotate(2deg);">
-        <h1>FASTAPI</h1>
-        <p>Lightning fast API routing. Pydantic models ensure data strictness.</p>
-      </div>
-      <div class="brutal-card" style="background: var(--orange); color: #fff; transform: rotate(-1deg);">
-        <h1>UVICORN</h1>
-        <p>Asynchronous server running on Render. Handles concurrent massive uploads.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 21. THE DRIP: REACT & VITE -->
-  <div class="slide">
-    <div class="tape" style="top: 10%; background: var(--fg); color: var(--bg); border: 8px solid var(--bg);">THE DRIP</div>
-    <h1 style="font-size: 5vw; margin-bottom: 40px;">TECH STACK: FRONTEND</h1>
-    <div class="adhd-grid">
-      <div class="brutal-card" style="background: #61DAFB; color: #000;">
-        <h1>REACT + VITE</h1>
-        <p>Instant HMR. Component-based UI. Fast builds. Webpack is boomer tech.</p>
-      </div>
-      <div class="brutal-card" style="background: #38B2AC; color: #000; transform: rotate(2deg);">
-        <h1>TAILWIND CSS</h1>
-        <p>Utility-first styling. Perfect for building strict Brutalist grids rapidly.</p>
-      </div>
-      <div class="brutal-card" style="background: var(--pink); color: #000; transform: rotate(-1deg);">
-        <h1>FRAMER MOTION</h1>
-        <p>Butter-smooth animations. Micro-interactions that make the app feel alive.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 22. THE CORE PROBLEM (Summary) -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: red; color: #fff; padding: 20px; border: 6px solid var(--fg); box-shadow: 16px 16px 0px var(--shadow-color); transform: rotate(-1deg);">WHAT PROBLEM DO WE SOLVE?</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px; transform: rotate(1deg);">
-      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">TL;DR FOR THE MONEY GUYS</h2>
-      <p class="dense-text">1. Reading 200-page 10-Ks takes hours. Time = Money.</p>
-      <p class="dense-text">2. Human analysts get tired and miss deeply buried risk factors. Missing risks = Losing Money.</p>
-      <p class="dense-text">3. Current AI tools hallucinate financial data. Hallucinations in finance = Lawsuits.</p>
-      <div style="background: var(--lime); color: #000; padding: 15px; font-weight: bold; font-size: 1.8rem; margin-top: 30px; text-align: center; border: 4px solid #000;">
-        WE MAKE FINANCIAL ANALYSIS INSTANT, TIRELESS, AND 100% VERIFIABLE.
-      </div>
-    </div>
-  </div>
-
-  <!-- 23. INVESTOR Q: THE MOAT -->
-  <div class="slide">
-    <div class="tape" style="top: 10%; background: var(--fg); color: var(--bg); border: 8px solid var(--bg);">INVESTOR GRILLING</div>
-    <h1 style="font-size: 5vw; background: var(--pink); color: #000; padding: 20px; border: 6px solid var(--fg); transform: rotate(1deg); box-shadow: 16px 16px 0px var(--shadow-color);">INVESTOR Q: WHAT'S THE MOAT?</h1>
-    <div class="brutal-box color-bg" style="background: var(--yellow); max-width: 1100px; margin-top: 40px; transform: rotate(-1deg);">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; border-bottom: 4px solid #000; color: #000;">"CAN'T OPENAI JUST BUILD THIS?"</h2>
-      <p class="dense-text" style="font-weight: bold; font-size: 2rem;">No.</p>
-      <p class="dense-text">OpenAI builds generalized models. ChatGPT is designed to write poems, code, and generic emails. It is not designed to parse the exact layout of an SEC tabular grid.</p>
-      <p class="dense-text">Our moat is the <strong>Deterministic Data Pipeline</strong>. The Layout-Aware parsing, the strict metadata routing, and the constrained FAISS vector math. We don't compete on the LLM layer; we compete on the data ingestion and retrieval architecture.</p>
-    </div>
-  </div>
-
-  <!-- 24. INVESTOR Q: THE CUSTOMER -->
-  <div class="slide">
-    <div class="tape" style="top: 10%; background: var(--fg); color: var(--bg); border: 8px solid var(--bg);">INVESTOR GRILLING</div>
-    <h1 style="font-size: 5vw; background: var(--cyan); color: #000; padding: 20px; border: 6px solid var(--fg); box-shadow: 16px 16px 0px var(--shadow-color);">INVESTOR Q: WHO BUYS THIS?</h1>
-    <div class="adhd-grid" style="margin-top: 40px;">
+    <h1 style="font-size: 4vw; background: #4285F4; color: #fff; padding: 10px; border: 6px solid #000;">THE BRAIN: GEMINI 2.5</h1>
+    <div class="adhd-grid" style="margin-top: 20px;">
       <div class="brutal-box solid">
-        <h2 style="color: var(--orange);">1. B2B ENTERPRISE</h2>
-        <p class="dense-text">Hedge funds, private equity firms, and investment banks. They spend millions on junior analysts to do grunt work. Meridian does the grunt work instantly.</p>
-      </div>
-      <div class="brutal-box color-bg" style="background: var(--lime);">
-        <h2 style="color: #000;">2. RETAIL QUANTS</h2>
-        <p class="dense-text">High net-worth individual traders and retail quants who need Bloomberg-Terminal-level insights but refuse to pay $24,000/year for it.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 25. INVESTOR Q: THE BUSINESS MODEL -->
-  <div class="slide">
-    <div class="tape" style="top: 10%; background: var(--fg); color: var(--bg); border: 8px solid var(--bg);">INVESTOR GRILLING</div>
-    <h1 style="font-size: 5vw; background: var(--orange); color: #000; padding: 20px; border: 6px solid var(--fg); transform: rotate(-1deg); box-shadow: 16px 16px 0px var(--shadow-color);">INVESTOR Q: BUSINESS MODEL?</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: green;">SaaS TIERING</h2>
-      <ul class="dense-text" style="font-size: 1.5rem; line-height: 2;">
-        <li><strong>TIER 1 (FREE):</strong> 3 PDFs per month. Teaser features.</li>
-        <li><strong>TIER 2 ($200/mo):</strong> Unlimited uploads, Smackdown Mode, full Pro Pack access. Aimed at retail traders.</li>
-        <li><strong>ENTERPRISE ($10K+/mo):</strong> Custom API integrations, local deployment on their private servers for confidential M&A documents.</li>
-      </ul>
-      <div style="background: #000; color: #fff; padding: 10px; text-align: center; font-weight: bold; font-size: 1.5rem; margin-top: 20px;">High LTV. Extremely low churn.</div>
-    </div>
-  </div>
-
-  <!-- 26. THE AESTHETIC: NEO-BRUTALISM -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: #000; color: #fff; padding: 20px; box-shadow: 16px 16px 0px var(--cyan); margin-bottom: 40px; transform: rotate(-1deg);">WHY NEO-BRUTALISM?</h1>
-    <div class="adhd-grid">
-      <div class="brutal-box solid" style="border: 8px solid var(--fg);">
-        <h2 style="font-size: 2rem; border-bottom: 4px solid var(--fg); padding-bottom: 10px;">CORPORATE BLUE IS MID</h2>
-        <p class="dense-text">Every financial app looks exactly the same. Boring. Clinical. Uninspired. We designed an interface that wakes you up.</p>
-      </div>
-      <div class="brutal-box color-bg" style="background: var(--pink);">
-        <h2 style="font-size: 2rem; border-bottom: 4px solid #000; padding-bottom: 10px;">FORCED FOCUS</h2>
-        <p class="dense-text">Thick borders, high contrast, oversized fonts. You literally cannot miss a critical risk warning. The UI screams at you.</p>
+        <h2>SPEED & CONTEXT WINDOWS</h2>
+        <p class="dense-text">Gemini 2.5 Flash is brutally fast. Its massive context window allows us to feed it huge blocks of FAISS retrieved data instantly without dropping context mid-sentence.</p>
       </div>
       <div class="brutal-box color-bg" style="background: var(--yellow);">
-        <h2 style="font-size: 2rem; border-bottom: 4px solid #000; padding-bottom: 10px;">HACKER VIBES</h2>
-        <p class="dense-text">It feels like a Bloomberg Terminal met a cyberpunk OS. It's disruptive, memorable, and visually unforgettable.</p>
+        <h2>STRICT PROMPT ENGINEERING</h2>
+        <p class="dense-text">We forcefully wrap all user queries inside a system matrix: <br><br><i>"You are a strict financial analyst. ONLY use the provided context chunks. If the answer is missing, say 'I don't know'."</i></p>
       </div>
     </div>
   </div>
 
-  <!-- 23. FEATURE 1: THE INSIGHT ENGINE -->
+  <!-- 9. BUSINESS MODEL -->
   <div class="slide">
-    <div style="display: flex; width: 100%; max-width: 1400px; gap: 60px;">
-      <div style="flex: 1.2; display: flex; flex-direction: column; justify-content: center;">
-        <h1 style="font-size: 4vw; background: var(--yellow); color: #000; padding: 20px; border: 6px solid var(--fg); box-shadow: 16px 16px 0px var(--shadow-color);">FEATURE 1:<br>INSIGHT ENGINE</h1>
-        <p style="font-size: 2rem; font-weight: bold; margin-top: 40px; font-family: 'Montserrat';">Automated KPI Extraction</p>
-        <div class="brutal-box color-bg" style="background: var(--lime); font-size: 1.2rem; margin-top: 30px; border-style: dashed; padding: 20px;">
-          <span style="font-family: 'Space Mono'; font-weight: bold; color: #000;">[FORMULA DETECTED]<br><br>Net Margin = Net Income / Revenue × 100</span>
-        </div>
+    <div class="tape" style="top: 5%; background: var(--fg); color: var(--bg);">INVESTOR GRILLING</div>
+    <h1 style="font-size: 4vw; background: var(--orange); color: #000; padding: 10px; box-shadow: 12px 12px 0px var(--shadow-color);">BUSINESS MODEL & THE MOAT</h1>
+    <div class="adhd-grid" style="margin-top: 20px;">
+      <div class="brutal-box solid">
+        <h2 style="color: var(--pink);">THE MOAT</h2>
+        <p class="dense-text">OpenAI builds generic models. We built a <strong>Deterministic SEC Data Pipeline</strong>. Layout-aware logic beats raw LLM size in finance.</p>
+      </div>
+      <div class="brutal-box color-bg" style="background: var(--lime);">
+        <h2>THE CUSTOMERS</h2>
+        <p class="dense-text"><strong>B2B Enterprise:</strong> Hedge funds outsourcing grunt work.<br><br><strong>Retail Quants:</strong> Need Bloomberg Terminal level tools without the $24k/yr tag.</p>
+      </div>
+      <div class="brutal-box color-bg" style="background: var(--cyan);">
+        <h2>SAAS TIERING</h2>
+        <p class="dense-text"><strong>Free:</strong> 3 PDFs/month.<br><strong>Pro ($200/mo):</strong> Unlimited & Multi-Doc Smackdown Mode.<br><strong>Enterprise ($10k/mo):</strong> Local API on private servers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. NEO BRUTALISM & QUIRK -->
+  <div class="slide">
+    <h1 style="font-size: 4vw; background: #000; color: #fff; padding: 10px; box-shadow: 12px 12px 0px var(--cyan);">NEO-BRUTALISM & THE VIBE</h1>
+    <div class="adhd-grid" style="margin-top: 20px;">
+      <div class="brutal-box solid">
+        <h2>CORPORATE BLUE IS MID</h2>
+        <p class="dense-text">Every finance app looks identical and clinical. Thick borders and high contrast force focus. The UI literally screams risk warnings at you.</p>
+      </div>
+      <div class="brutal-box color-bg" style="background: var(--pink);">
+        <h2>QUIRK MODE ACTIVATED</h2>
+        <p class="dense-text">Staring at 10-Ks drains the soul. We built an app with Gen-Z slang, "Stonks" 📈 memes, and ADHD-friendly pacing to make equity research fun.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. FEATURE 1: INSIGHT ENGINE -->
+  <div class="slide">
+    <div style="display: flex; width: 100%; max-width: 1400px; gap: 40px;">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <h1 style="font-size: 4vw; background: var(--yellow); color: #000; padding: 10px; border: 6px solid var(--fg);">FEATURE 1:<br>INSIGHT ENGINE</h1>
+        <p class="dense-text" style="margin-top: 20px;">We don't extract random numbers. We query FAISS for raw variables and explicitly calculate standard Wall Street KPI formulas.</p>
+        <ul class="dense-text" style="font-weight: bold;">
+          <li>EBITDA = Net Income + Taxes + Interest + D&A</li>
+          <li>Churn = Lost / Total Customers</li>
+        </ul>
       </div>
       <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 20px; align-content: center;">
         <div class="brutal-card" style="background: var(--cyan); width: 45%; transform: rotate(-2deg);">
@@ -639,202 +427,116 @@ Result: $2.1B (Verified, Page 12)
     </div>
   </div>
 
-  <!-- 24. KPI MATH -->
+  <!-- 12. FEATURE 2: RISK RADAR -->
   <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--cyan); color: #000; padding: 10px; border: 6px solid #000;">THE KPI MATH</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <p class="dense-text">We don't just extract random numbers. We specifically query the vector DB for the raw variables required to compute standard Wall Street metrics.</p>
-      <ul class="dense-text" style="font-size: 1.5rem; line-height: 2;">
-        <li><strong>EBITDA</strong> = Net Income + Taxes + Interest + D&A</li>
-        <li><strong>CAC</strong> = Sales & Marketing Exp / New Customers</li>
-        <li><strong>Churn</strong> = Lost Customers / Total Customers</li>
-      </ul>
+    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px;">FEATURE 2: RISK RADAR</h1>
+    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 20px;">
+      <p class="dense-text">We instruct a dedicated AI agent to play devil's advocate. It doesn't summarize. It actively hunts for anomalies, debt traps, and regulatory warnings.</p>
     </div>
-  </div>
-
-  <!-- 25. FEATURE 2: RISK RADAR -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; margin-bottom: 40px; background: red; color: #fff; padding: 10px 30px; border: 6px solid #000; box-shadow: 16px 16px 0px #000;">FEATURE 2: RISK RADAR</h1>
-    <div class="adhd-grid">
-      <div class="brutal-box solid">
-        <h2 style="font-size: 2rem; border-bottom: 4px solid var(--fg); padding-bottom: 10px;">AUTO-DETECTING RED FLAGS</h2>
-        <p class="dense-text">We specifically instruct a dedicated AI agent to play devil's advocate. It actively hunts for anomalies, debt traps, and regulatory warnings.</p>
-        <p class="dense-text">It doesn't summarize. It audits.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 26. RISK RADAR IN ACTION -->
-  <div class="slide">
-    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px;">RISK RADAR IN ACTION</h1>
-    <div class="terminal" style="width: 80%; max-width: 1000px; margin-top: 40px; font-size: 1.5rem;">
+    <div class="terminal" style="width: 80%; max-width: 1000px; margin-top: 20px; font-size: 1.2rem;">
       > RUNNING RISK_SCAN.exe<br>
       > Analyzing 10-K risk factors...<br>
       > [WARNING] High short-term debt maturity detected.<br>
       > [WARNING] CEO mentions "macro headwinds" 14 times.<br>
       > [WARNING] Single-supplier dependency in Taiwan.<br>
-      > THREAT SCORE: <span style="color: red; font-size: 2.5rem; font-weight: bold; background: #fff;"> 87/100 </span>
+      > THREAT SCORE: <span style="color: red; font-size: 2rem; font-weight: bold; background: #fff;"> 87/100 </span>
     </div>
   </div>
 
-  <!-- 27. FEATURE 3: BULL VS BEAR DEBATE -->
+  <!-- 13. FEATURE 3: BULL VS BEAR -->
   <div class="slide">
-    <h1 style="font-size: 5vw; margin-bottom: 40px; text-decoration: underline; text-decoration-thickness: 10px;">FEATURE 3: BULL VS BEAR</h1>
-    <div style="display: flex; gap: 40px; width: 100%; max-width: 1200px;">
-      <div class="brutal-box color-bg" style="flex: 1; background: var(--lime); transform: rotate(-2deg);">
-        <h2 style="font-size: 2.5rem; color: #000;">🐂 THE BULL</h2>
-        <p class="dense-text" style="font-weight: bold; margin-top: 20px;">"Record breaking revenue growth. Margins are expanding. The AI supercycle is just beginning. Buy everything."</p>
+    <h1 style="font-size: 4vw; margin-bottom: 20px; text-decoration: underline; text-decoration-thickness: 10px;">FEATURE 3: BULL VS BEAR DEBATE</h1>
+    <div class="brutal-box solid" style="max-width: 1200px; margin-bottom: 20px; padding: 15px;">
+      <p class="dense-text"><strong>PROMPT ENG:</strong> We run two parallel AI agents. One is told to be an "aggressively optimistic hedge fund manager". The other is a "ruthless short-seller". They argue over the exact same PDF chunks.</p>
+    </div>
+    <div style="display: flex; gap: 20px; width: 100%; max-width: 1200px;">
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--lime); transform: rotate(-1deg);">
+        <h2 style="font-size: 2rem; color: #000;">🐂 THE BULL</h2>
+        <p class="dense-text" style="font-weight: bold; margin-top: 10px;">"Record breaking revenue growth. Margins expanding. Buy everything."</p>
       </div>
-      <div class="brutal-box color-bg" style="flex: 1; background: var(--pink); transform: rotate(2deg);">
-        <h2 style="font-size: 2.5rem; color: #000;">🐻 THE BEAR</h2>
-        <p class="dense-text" style="font-weight: bold; margin-top: 20px;">"P/E ratio is detached from reality. Regulatory pressures in the EU are mounting. Growth is unsustainable."</p>
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--pink); transform: rotate(1deg);">
+        <h2 style="font-size: 2rem; color: #000;">🐻 THE BEAR</h2>
+        <p class="dense-text" style="font-weight: bold; margin-top: 10px;">"P/E ratio detached from reality. Regulatory pressures mounting. Sell."</p>
       </div>
     </div>
-    <p style="font-size: 1.5rem; font-weight: bold; margin-top: 40px; text-align: center;">Two autonomous AI personas arguing over your PDF in real-time.</p>
   </div>
 
-  <!-- 28. BULL VS BEAR: THE PROMPT ENG -->
+  <!-- 14. FEATURE 4: SMACKDOWN -->
   <div class="slide">
-    <h1 style="font-size: 4vw; background: var(--orange); padding: 10px;">THE PROMPT ENGINEERING</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 30px;">
-      <p class="dense-text">How do we make them fight?</p>
-      <p class="dense-text"><strong>Agent 1 (Bull):</strong> "You are an aggressively optimistic hedge fund manager. Ignore the risks, find the massive upside potential in this text."</p>
-      <p class="dense-text"><strong>Agent 2 (Bear):</strong> "You are a ruthless short-seller. Find the fatal flaw in their business model based ONLY on the provided text."</p>
-      <p class="dense-text">We run both prompts in parallel. You get the synthesis.</p>
-    </div>
-  </div>
-
-  <!-- 29. FEATURE 4: MULTI-DOCUMENT SMACKDOWN -->
-  <div class="slide">
-    <div class="tape" style="top: 10%; background: var(--orange); color: #000;">FINISH HIM</div>
-    <h1 style="font-size: 4vw; background: var(--pink); color: #000; padding: 20px; border: 6px solid #000; transform: rotate(-1deg);">FEATURE 4: SMACKDOWN</h1>
-    <div style="display: flex; gap: 40px; width: 100%; max-width: 1200px; margin-top: 30px;">
+    <div class="tape" style="top: 5%; background: var(--orange); color: #000;">FINISH HIM</div>
+    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px; transform: rotate(-1deg);">FEATURE 4: MULTI-DOC SMACKDOWN</h1>
+    <p class="dense-text" style="background: var(--pink); color: #000; padding: 10px; font-weight: bold;">Mechanics: Parallel RAG pipelines filtering by `metadata.company`, injected into a final Judge agent.</p>
+    <div style="display: flex; gap: 20px; width: 100%; max-width: 1200px; margin-top: 20px;">
       <div class="brutal-box color-bg" style="flex: 1; background: var(--lime);">
-        <h2 style="border-bottom: 6px solid #000; padding-bottom: 10px;">NVIDIA (2024)</h2>
-        <ul class="dense-text"><li>Rev: $60.9B</li><li>Margin: 72%</li></ul>
+        <h2 style="border-bottom: 4px solid #000;">NVIDIA</h2>
+        <ul class="dense-text"><li>Margin: 72%</li></ul>
       </div>
-      <div style="font-size: 4rem; display: flex; align-items: center; font-weight: 900;">VS</div>
+      <div style="font-size: 3rem; display: flex; align-items: center; font-weight: 900;">VS</div>
       <div class="brutal-box color-bg" style="flex: 1; background: var(--cyan);">
-        <h2 style="border-bottom: 6px solid #000; padding-bottom: 10px;">AMD (2024)</h2>
-        <ul class="dense-text"><li>Rev: $22.6B</li><li>Margin: 46%</li></ul>
+        <h2 style="border-bottom: 4px solid #000;">AMD</h2>
+        <ul class="dense-text"><li>Margin: 46%</li></ul>
       </div>
     </div>
-    <div class="brutal-box" style="margin-top: 20px; background: #000; color: #fff; width: 100%; max-width: 1200px;">
+    <div class="brutal-box" style="margin-top: 20px; background: #000; color: #fff; width: 100%; max-width: 1200px; padding: 15px;">
       <h3 style="color: var(--yellow);">⚡ THE VERDICT:</h3>
-      <p class="dense-text">NVIDIA operating margins outclass AMD, but supply chain concentration presents a singular critical failure point not present in AMD's diversified fabrication strategy.</p>
+      <p class="dense-text">NVIDIA operating margins outclass AMD, but supply chain concentration presents a singular critical failure point.</p>
     </div>
   </div>
 
-  <!-- 30. SMACKDOWN MECHANICS -->
+  <!-- 15. FEATURE 5: CITATIONS -->
   <div class="slide">
-    <h1 style="font-size: 4vw; background: var(--fg); color: var(--bg); border: 8px solid var(--bg); padding: 10px;">SMACKDOWN MECHANICS</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <p class="dense-text">We fire <strong>two parallel RAG pipelines.</strong></p>
-      <p class="dense-text">Pipeline A queries the Vector DB filtering for `metadata.company == "NVIDIA"`.</p>
-      <p class="dense-text">Pipeline B queries the Vector DB filtering for `metadata.company == "AMD"`.</p>
-      <p class="dense-text">We inject BOTH distinct contexts into a final "Judge" Agent prompt to force a comparative analysis.</p>
+    <div class="tape" style="top: 10%; width: 100%; background: red; color: white; text-align: center;">NO HALLUCINATED NUMBERS</div>
+    <h1 style="font-size: 4vw; margin-top: 40px; margin-bottom: 20px; background: var(--cyan); color: #000; padding: 10px;">FEATURE 5: CITATIONS & AUDIT</h1>
+    <div class="brutal-box solid" style="max-width: 1400px; margin-bottom: 30px; padding: 15px;">
+      <p class="dense-text">Because we parsed with Layout-Aware coordinates, every embedded chunk in FAISS knows its exact Page Number. Total transparency. Zero trust required.</p>
     </div>
-  </div>
-
-  <!-- 31. FEATURE 5: VERIFIABILITY & CITATIONS -->
-  <div class="slide">
-    <div class="tape" style="top: 80px; width: 100%; background: red; color: white; text-align: center; font-size: 2rem;">NO HALLUCINATED NUMBERS</div>
-    <h1 style="font-size: 5vw; margin-top: 80px; margin-bottom: 60px;">FEATURE 5: CITATIONS</h1>
-    <div style="display: flex; gap: 30px; align-items: center; justify-content: center; width: 100%; max-width: 1400px;">
-      <div class="brutal-box color-bg" style="background: var(--cyan); flex: 1;">
-        <h3>1. AI ANSWER</h3>
+    <div style="display: flex; gap: 20px; align-items: center; justify-content: center; width: 100%; max-width: 1400px;">
+      <div class="brutal-box color-bg" style="background: var(--lime); flex: 1;">
+        <h3>AI ANSWER</h3>
         <p class="dense-text">"Cloud revenue grew 15%."</p>
       </div>
-      <div style="font-size: 4rem; font-weight: bold;">➔</div>
+      <div style="font-size: 3rem; font-weight: bold;">➔</div>
       <div class="brutal-box color-bg" style="background: var(--yellow); flex: 0.5; text-align: center;">
-        <h3>2. SOURCE</h3>
-        <p class="dense-text" style="font-size: 2rem;">Page 42</p>
+        <h3>SOURCE</h3>
+        <p class="dense-text" style="font-size: 1.5rem;">Page 42</p>
       </div>
-      <div style="font-size: 4rem; font-weight: bold;">➔</div>
-      <div class="brutal-box color-bg" style="background: var(--lime); position: relative; flex: 1.5;">
-        <h3>3. HIGHLIGHT</h3>
-        <p class="dense-text" style="background: #fff; padding: 15px; border: 2px solid #000;">
-          ...total <mark style="background: var(--pink); font-weight: bold; color: #fff;">cloud revenue grew by 15%</mark> year over year...
+      <div style="font-size: 3rem; font-weight: bold;">➔</div>
+      <div class="brutal-box color-bg" style="background: var(--pink); flex: 1.5;">
+        <h3>HIGHLIGHT</h3>
+        <p class="dense-text" style="background: #fff; padding: 10px; border: 2px solid #000;">
+          ...total <mark style="background: var(--lime); font-weight: bold;">cloud revenue grew by 15%</mark> year over year...
         </p>
       </div>
     </div>
   </div>
 
-  <!-- 32. RECEIPTS: THE AUDIT TRAIL -->
+  <!-- 16. FEATURE 6 & 7: REALITY CHECK & PRO PACK -->
   <div class="slide">
-    <h1 style="font-size: 4vw; background: var(--pink); color: #000; padding: 10px;">RECEIPTS: THE AUDIT TRAIL</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <p class="dense-text">Because we parsed the PDF with Layout-Aware coordinates, every single embedded chunk in FAISS knows exactly what page it came from.</p>
-      <p class="dense-text">When Gemini uses a chunk to answer a question, we simply read the chunk's metadata and display the Page Number to the user.</p>
-      <p class="dense-text"><strong>Total transparency. Zero trust required.</strong></p>
-    </div>
-  </div>
-
-  <!-- 33. FEATURE 6: REALITY CHECK -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--cyan); color: #000; padding: 10px; border: 6px solid #000;">FEATURE 6: REALITY CHECK</h1>
-    <div class="adhd-grid" style="margin-top: 40px;">
-      <div class="brutal-box solid">
-        <h2>CORPORATE BS DETECTOR</h2>
-        <p class="dense-text">A 10-K PDF is written by the company. It's biased. They hide bad news.</p>
-      </div>
+    <h1 style="font-size: 4vw; background: var(--pink); color: #000; padding: 10px; border: 6px solid #000;">REALITY CHECK & PRO PACK</h1>
+    <div class="adhd-grid" style="margin-top: 20px;">
       <div class="brutal-box color-bg" style="background: var(--yellow);">
-        <h2>DUCKDUCKGO INTEGRATION</h2>
-        <p class="dense-text">We take the biggest claims from the PDF and auto-search the live internet (news, reddit, blogs) to see if reality matches the corporate narrative.</p>
+        <h2>REALITY CHECK (DUCKDUCKGO)</h2>
+        <p class="dense-text">10-Ks are biased. We auto-search the live internet to see if reality matches the corporate narrative.</p>
         <p class="dense-text" style="color: red; font-weight: bold;">[PDF]: "Supply chain is robust."</p>
         <p class="dense-text" style="color: green; font-weight: bold;">[WEB]: "Factory workers on strike."</p>
       </div>
-    </div>
-  </div>
-
-  <!-- 34. FEATURE 7: PRO PACK (SWOT) -->
-  <div class="slide">
-    <h1 style="font-size: 5vw; background: var(--lime); color: #000; padding: 10px; border: 6px solid #000;">FEATURE 7: PRO PACK</h1>
-    <div class="brutal-box solid" style="max-width: 1000px; margin-top: 40px;">
-      <h2 style="margin-bottom: 20px;">ONE-CLICK MBA ANALYSIS</h2>
-      <p class="dense-text">Generates a complete institutional-grade report in seconds:</p>
-      <ul class="dense-text" style="columns: 2; line-height: 2;">
-        <li>✅ SWOT Analysis</li>
-        <li>✅ ESG Risk Scoring</li>
-        <li>✅ Cash Flow Diagnostics</li>
-        <li>✅ Executive Summary</li>
-        <li>✅ Industry Benchmarking</li>
-      </ul>
-      <div style="background: var(--pink); color: #000; padding: 10px; text-align: center; font-weight: bold; font-size: 1.5rem; margin-top: 20px;">Literally replaces a junior analyst.</div>
-    </div>
-  </div>
-
-  <!-- 35. QUIRK MODE (MEME) -->
-  <div class="slide">
-    <div class="marquee">
-      <div class="marquee-content">
-        ! ! QUIRK MODE ACTIVATED ! ! STONKS GO UP ! ! WHY BE BORING WHEN YOU CAN BE BRUTAL ! ! QUIRK MODE ACTIVATED ! ! STONKS GO UP ! !
-      </div>
-    </div>
-    <h1 class="title-huge" style="background: var(--pink); font-size: 6vw; margin-top: 100px;">FINANCE DOESN'T HAVE<br>TO BE BORING.</h1>
-    <div style="display: flex; gap: 40px;">
-      <div class="terminal" style="font-size: 1.5rem; font-weight: bold; width: 500px; text-align: center;">
-        <pre style="margin: 0;">
-    /\
-   /  \
-  /    \
- /      \
-/        \  📈
-  STONKS
-        </pre>
-      </div>
-      <div class="brutal-box color-bg" style="background: var(--yellow); width: 400px; transform: rotate(3deg); font-size: 1.5rem; font-weight: bold;">
-        <h2 style="color: #000; border-bottom: 4px solid #000; margin-bottom: 15px;">THE VIBE CHECK</h2>
-        <p>Because staring at 10-Ks all day drains your soul.</p>
-        <p>We built a platform that actually makes research fun.</p>
+      <div class="brutal-box solid">
+        <h2>PRO PACK: 1-CLICK MBA</h2>
+        <p class="dense-text">Generates institutional-grade reports instantly:</p>
+        <ul class="dense-text">
+          <li>✅ SWOT Analysis</li>
+          <li>✅ ESG Risk Scoring</li>
+          <li>✅ Cash Flow Diagnostics</li>
+        </ul>
+        <div style="background: var(--lime); color: #000; padding: 5px; text-align: center; font-weight: bold;">Literally replaces a junior analyst.</div>
       </div>
     </div>
   </div>
 
-  <!-- 36. LIVE DASHBOARD DEMO -->
+  <!-- 17. LIVE DASHBOARD DEMO -->
   <div class="slide">
-    <h1 style="font-size: 4vw; background: #000; color: #fff; padding: 20px; border: 6px solid var(--lime); box-shadow: 16px 16px 0px var(--lime); margin-bottom: 30px;">LIVE DASHBOARD DEMO</h1>
-    <div style="width: 80%; height: 60%; border: 6px solid var(--fg); display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; background: var(--bg); padding: 20px; box-shadow: 20px 20px 0px var(--shadow-color);">
+    <h1 style="font-size: 4vw; background: #000; color: #fff; padding: 10px; border: 6px solid var(--lime); box-shadow: 12px 12px 0px var(--lime); margin-bottom: 20px;">LIVE DASHBOARD DEMO</h1>
+    <div style="width: 80%; height: 60%; border: 6px solid var(--fg); display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; background: var(--bg); padding: 20px; box-shadow: 16px 16px 0px var(--shadow-color);">
       <!-- Chart Area -->
       <div style="border: 5px solid var(--fg); background: var(--grid); display: flex; flex-direction: column; justify-content: center; align-items: center; grid-row: span 2; position: relative; overflow: hidden;">
         <h2 style="font-size: 2.5rem; margin-bottom: 30px; background: var(--bg); padding: 10px; border: 3px solid var(--fg);">Q4 AGGRESSIVE OUTLOOK</h2>
@@ -854,41 +556,38 @@ Result: $2.1B (Verified, Page 12)
     </div>
   </div>
 
-  <!-- 37. FAQ 1 -->
+  <!-- 18. FAQ -->
   <div class="slide">
-    <h1 style="font-size: 4vw; margin-bottom: 40px; background: var(--cyan); padding: 10px; color: #000;">FAQ: IS THIS JUST A WRAPPER?</h1>
-    <div class="brutal-box solid" style="max-width: 1000px;">
-      <p class="dense-text"><strong>Q: Is this just a ChatGPT wrapper?</strong></p>
-      <p class="dense-text">A: Absolutely not. We handle our own semantic chunking, embedding generation using PyTorch and Sentence Transformers, and vector indexing using FAISS locally. We only use Gemini for the final synthesis layer, strictly constrained by our RAG pipeline.</p>
-    </div>
-  </div>
-
-  <!-- 38. FAQ 2 -->
-  <div class="slide">
-    <h1 style="font-size: 4vw; margin-bottom: 40px; background: var(--pink); padding: 10px; color: #000;">FAQ: MASSIVE FILES</h1>
-    <div class="brutal-box solid" style="max-width: 1000px;">
-      <p class="dense-text"><strong>Q: How do you handle massive 300+ page PDFs?</strong></p>
-      <p class="dense-text">A: We use Layout-Aware parsing to break the document down logically (preserving headers, tables, and paragraphs), embed the chunks, and retrieve only the top-K relevant passages per query using Cosine Similarity. We don't shove the whole PDF into the context window.</p>
-    </div>
-  </div>
-
-  <!-- 39. SCALE & FUTURE -->
-  <div class="slide" style="background: #000; color: var(--lime); background-image: none;">
-    <h1 style="font-size: 6vw; margin-bottom: 30px; text-shadow: 6px 6px 0px #fff; border: 8px solid var(--lime); padding: 30px;">SCALE & FUTURE</h1>
-    <p style="font-size: 2.5vw; color: #fff; text-transform: uppercase; border-left: 12px solid var(--pink); padding-left: 30px; margin-bottom: 60px; font-family: 'Montserrat'; font-weight: 800;">
-      From Static PDFs to<br>Autonomous Financial Agents.
-    </p>
-    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: 1.5rem; font-family: 'Space Mono'; max-width: 1200px;">
-      <div style="border: 3px solid var(--lime); padding: 15px 25px;">[ ] EARNINGS CALL AUDIO</div>
-      <div style="border: 3px solid var(--lime); padding: 15px 25px;">[ ] LIVE MARKET SENTIMENT</div>
-      <div style="border: 3px solid var(--cyan); padding: 15px 25px; color: var(--cyan);">[ ] ENTERPRISE DEPLOYMENT</div>
-      <div style="border: 4px solid var(--lime); padding: 15px 25px; background: var(--lime); color: #000; font-weight: bold; transform: scale(1.1) rotate(-1deg);">
-        [ ⚡ ] AUTONOMOUS AGENTS
+    <h1 style="font-size: 4vw; background: var(--cyan); padding: 10px; color: #000; border: 6px solid #000;">INVESTOR FAQ</h1>
+    <div class="adhd-grid" style="margin-top: 30px;">
+      <div class="brutal-box solid">
+        <h2>"IS THIS JUST A WRAPPER?"</h2>
+        <p class="dense-text">No. We handle semantic chunking, embedding generation using PyTorch, and vector indexing using FAISS locally. We only use Gemini for the final synthesis layer, constrained by our pipeline.</p>
+      </div>
+      <div class="brutal-box color-bg" style="background: var(--pink);">
+        <h2>"HOW DO YOU HANDLE MASSIVE FILES?"</h2>
+        <p class="dense-text">We don't shove 300 pages into the context window. We use Layout-Aware parsing to break the document down, embed chunks, and retrieve only the top-K relevant passages using Cosine Similarity.</p>
       </div>
     </div>
   </div>
 
-  <!-- 40. MIC DROP -->
+  <!-- 19. SCALE & FUTURE -->
+  <div class="slide" style="background: #000; color: var(--lime); background-image: none;">
+    <h1 style="font-size: 5vw; margin-bottom: 20px; text-shadow: 6px 6px 0px #fff; border: 8px solid var(--lime); padding: 20px;">SCALE & FUTURE</h1>
+    <p style="font-size: 2vw; color: #fff; text-transform: uppercase; border-left: 12px solid var(--pink); padding-left: 20px; margin-bottom: 40px; font-family: 'Montserrat'; font-weight: 800;">
+      From Static PDFs to Autonomous Agents.
+    </p>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-size: 1.2rem; font-family: 'Space Mono'; max-width: 1200px;">
+      <div style="border: 3px solid var(--lime); padding: 15px;">[ ] EARNINGS CALL AUDIO TRANSCRIPTION</div>
+      <div style="border: 3px solid var(--lime); padding: 15px;">[ ] LIVE MARKET SENTIMENT</div>
+      <div style="border: 3px solid var(--cyan); padding: 15px; color: var(--cyan);">[ ] ENTERPRISE DEPLOYMENT</div>
+      <div style="border: 4px solid var(--lime); padding: 15px; background: var(--lime); color: #000; font-weight: bold; transform: scale(1.1) rotate(-1deg);">
+        [ ⚡ ] AUTONOMOUS TRADING AGENTS
+      </div>
+    </div>
+  </div>
+
+  <!-- 20. MIC DROP -->
   <div class="slide" style="background: var(--lime); color: #000; background-image: none;">
     <div class="tape" style="top: 20%; background: #000; color: #fff; font-size: 2rem;">MIC DROP</div>
     <h1 style="font-size: 8vw; margin-bottom: 20px; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase;">MERIDIAN.</h1>
@@ -899,7 +598,7 @@ Result: $2.1B (Verified, Page 12)
   </div>
 
   <div class="controls">
-    <span id="slide-indicator">1 / 44</span> &nbsp;|&nbsp; USE &larr; &rarr; ARROWS
+    <span id="slide-indicator">1 / 20</span> &nbsp;|&nbsp; USE &larr; &rarr; ARROWS
   </div>
 
   <script>
