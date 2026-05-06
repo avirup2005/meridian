@@ -8,7 +8,7 @@ This is **not** another "ChatPDF" wrapper. Generic LLM wrappers strip formatting
 
 ---
 
-## ⚡ CORE PIPELINE
+## [ CORE PIPELINE ]
 
 1. **Layout-Aware Parsing (`pdfplumber`)**: 
    We don't just extract text. We extract bounding boxes (X/Y coordinates) to ensure massive financial tables are mapped explicitly into markdown, preserving their structural integrity before embedding.
@@ -21,7 +21,7 @@ This is **not** another "ChatPDF" wrapper. Generic LLM wrappers strip formatting
 5. **Multi-Agent Gemini 2.5 Engine**: 
    Strict prompt engineering wraps the final generation layer. The model does not hallucinate. It retrieves, verifies, and cites.
 
-## 🛠️ FEATURES
+## [ FEATURES ]
 
 - **Insight Engine:** Explicit extraction of raw variables from FAISS to calculate standard Wall Street KPIs (EBITDA, CAGR, Churn) using hardcoded logic, not LLM math.
 - **Risk Radar:** An autonomous agent acting as a devil's advocate, scanning chunks specifically for anomalies, debt traps, and regulatory warnings.
@@ -29,7 +29,7 @@ This is **not** another "ChatPDF" wrapper. Generic LLM wrappers strip formatting
 - **Multi-Doc Smackdown:** Parallel RAG pipelines extracting isolated metrics from multiple competitors and injecting them into a final Judge agent.
 - **Pro Pack (1-Click MBA):** Instant execution of institutional-grade SWOT analysis and ESG scoring.
 
-## 🖥️ TECH STACK
+## [ TECH STACK ]
 
 **[CORE] BACKEND:**
 - Python 3.10+
@@ -45,7 +45,7 @@ This is **not** another "ChatPDF" wrapper. Generic LLM wrappers strip formatting
 - Framer Motion (Hardware-accelerated pacing)
 - Strict Neo-Brutalist Vanilla CSS
 
-## 🚀 RUNNING LOCALLY
+## [ RUNNING LOCALLY ]
 
 ### 1. The Engine Room (Backend)
 ```bash
