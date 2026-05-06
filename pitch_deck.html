@@ -7,14 +7,25 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Space+Mono:wght@400;700&display=swap');
 
     :root {
-      --bg: #FFFFFF;
+      --bg: #FDFBF7;
       --fg: #000000;
       --lime: #ADFF2F;
       --cyan: #19E5E6;
       --pink: #FF61D2;
       --orange: #FF5C00;
-      --grid: #E0F2FF;
+      --grid: #60a5fa;
       --yellow: #FFD400;
+      --shadow-color: #000000;
+    }
+
+    body.dark {
+      --bg: #090909;
+      --fg: #FDFBF7;
+      --lime: #39FF14;
+      --cyan: #00FFFF;
+      --pink: #FF1493;
+      --grid: rgba(255,255,255,0.1);
+      --shadow-color: #FDFBF7;
     }
 
     body {
@@ -22,15 +33,18 @@
       overflow: hidden;
       font-family: 'Space Mono', monospace;
       background-color: var(--bg);
+      color: var(--fg);
       background-image: linear-gradient(var(--grid) 1px, transparent 1px),
                         linear-gradient(90deg, var(--grid) 1px, transparent 1px);
       background-size: 40px 40px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     h1, h2, h3, h4 {
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       margin: 0;
+      color: var(--fg);
     }
 
     p {
@@ -63,22 +77,39 @@
     /* Neo-Brutalist elements */
     .brutal-box {
       border: 5px solid var(--fg);
-      box-shadow: 12px 12px 0px var(--fg);
-      background: #fff;
+      box-shadow: 12px 12px 0px var(--shadow-color);
+      background: var(--bg);
       padding: 30px;
       position: relative;
+    }
+    
+    .brutal-box.solid {
+      background: #fff;
+      color: #000;
+    }
+    body.dark .brutal-box.solid {
+      background: #111;
+      color: #fff;
+    }
+
+    .brutal-box.color-bg {
+      color: #000; /* force black text on bright colors */
+    }
+    .brutal-box.color-bg h1, .brutal-box.color-bg h2, .brutal-box.color-bg h3 {
+      color: #000;
     }
 
     .brutal-card {
       border: 4px solid var(--fg);
-      box-shadow: 8px 8px 0px var(--fg);
+      box-shadow: 8px 8px 0px var(--shadow-color);
       background: var(--yellow);
+      color: #000;
       padding: 20px;
       font-weight: bold;
     }
 
     .terminal {
-      background: var(--fg);
+      background: #000;
       color: var(--lime);
       font-family: 'Space Mono', monospace;
       padding: 24px;
@@ -86,16 +117,19 @@
       box-shadow: 12px 12px 0px var(--cyan);
       line-height: 1.6;
     }
+    body.dark .terminal {
+      border-color: #fff;
+    }
 
     .tape {
       background: var(--yellow);
-      color: var(--fg);
+      color: #000;
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
       text-transform: uppercase;
       padding: 8px 30px;
-      border-top: 5px dashed var(--fg);
-      border-bottom: 5px dashed var(--fg);
+      border-top: 5px dashed #000;
+      border-bottom: 5px dashed #000;
       position: absolute;
       z-index: 10;
       box-shadow: 0px 4px 0px rgba(0,0,0,0.2);
@@ -105,8 +139,9 @@
       font-size: 7vw;
       line-height: 0.9;
       background: var(--lime);
+      color: #000;
       border: 6px solid var(--fg);
-      box-shadow: 18px 18px 0px var(--fg);
+      box-shadow: 18px 18px 0px var(--shadow-color);
       padding: 30px;
       display: inline-block;
       margin-bottom: 30px;
@@ -128,15 +163,67 @@
       z-index: 1000;
       font-family: 'Space Mono';
       font-weight: bold;
-      background: #fff;
-      border: 4px solid #000;
-      box-shadow: 6px 6px 0px #000;
+      background: var(--bg);
+      color: var(--fg);
+      border: 4px solid var(--fg);
+      box-shadow: 6px 6px 0px var(--shadow-color);
       padding: 10px 20px;
       font-size: 1.2rem;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 1000;
+      background: var(--pink);
+      color: #000;
+      font-family: 'Montserrat';
+      font-weight: 900;
+      border: 4px solid var(--fg);
+      box-shadow: 6px 6px 0px var(--shadow-color);
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: transform 0.1s;
+    }
+    .theme-toggle:active {
+      transform: translate(4px, 4px);
+      box-shadow: 2px 2px 0px var(--shadow-color);
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--cyan);
+      color: #000;
+      border-top: 5px solid var(--fg);
+      border-bottom: 5px solid var(--fg);
+      padding: 10px 0;
+      font-family: 'Montserrat';
+      font-weight: 900;
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      z-index: -1;
+      transform: rotate(-2deg);
+    }
+    .marquee-content {
+      display: inline-block;
+      animation: scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
 <body>
+
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌑 Dark Mode</button>
 
   <!-- SLIDE 1: THE HOOK -->
   <div class="slide active" id="slide-1">
@@ -145,8 +232,8 @@
     </div>
     <h1 class="title-huge" style="background: var(--cyan); transform: rotate(1deg);">FINANCIAL<br>INTELLIGENCE:<br>DECODED.</h1>
     
-    <div class="brutal-box" style="background: var(--lime); max-width: 900px; transform: rotate(-1deg); text-align: center;">
-      <h2>Transforming 200-page financial reports into verifiable AI-driven intelligence.</h2>
+    <div class="brutal-box color-bg" style="background: var(--lime); max-width: 900px; transform: rotate(-1deg); text-align: center;">
+      <h2 style="color: #000;">Transforming 200-page financial reports into verifiable AI-driven intelligence.</h2>
     </div>
 
     <div class="terminal" style="position: absolute; bottom: 80px; left: 80px; width: 400px; font-size: 1rem; transform: rotate(2deg);">
@@ -163,54 +250,85 @@
 
   <!-- SLIDE 2: THE PROBLEM -->
   <div class="slide" id="slide-2">
-    <h1 style="font-size: 6vw; background: var(--fg); color: #fff; padding: 20px 40px; box-shadow: 16px 16px 0px var(--orange); margin-bottom: 60px; transform: rotate(-1deg);">THE DATA GRAVEYARD</h1>
+    <h1 style="font-size: 6vw; background: var(--fg); color: var(--bg); padding: 20px 40px; box-shadow: 16px 16px 0px var(--orange); margin-bottom: 60px; transform: rotate(-1deg);">THE DATA GRAVEYARD</h1>
     
     <div style="display: flex; gap: 40px; width: 100%; max-width: 1400px;">
-      <div class="brutal-box" style="flex: 1; background: #fff; transform: translateY(20px);">
+      <div class="brutal-box solid" style="flex: 1; transform: translateY(20px);">
         <h2 style="color: var(--orange); font-size: 2.5rem; margin-bottom: 15px;">200+ PAGE FILINGS</h2>
         <p style="font-size: 1.2rem;">Dense, unstructured annual reports intentionally bury critical signals.</p>
       </div>
-      <div class="brutal-box" style="flex: 1; background: var(--yellow); transform: translateY(-10px);">
-        <h2 style="color: var(--fg); font-size: 2.5rem; margin-bottom: 15px;">MANUAL ANALYSIS</h2>
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--yellow); transform: translateY(-10px);">
+        <h2 style="color: #000; font-size: 2.5rem; margin-bottom: 15px;">MANUAL ANALYSIS</h2>
         <p style="font-size: 1.2rem;">Inefficient, human-error prone, and outdated before it's even finished.</p>
       </div>
-      <div class="brutal-box" style="flex: 1; background: var(--fg); color: #fff; transform: translateY(30px); border-color: var(--orange); box-shadow: 12px 12px 0px var(--orange);">
+      <div class="brutal-box" style="flex: 1; background: #000; color: #fff; transform: translateY(30px); border-color: var(--orange); box-shadow: 12px 12px 0px var(--orange);">
         <h2 style="color: var(--orange); font-size: 2.5rem; margin-bottom: 15px;">RISK: CRITICAL</h2>
         <p style="font-size: 1.2rem; color: var(--lime);">Traditional AI hallucinates numbers. In finance, guessing is fatal.</p>
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 3: SYSTEM ARCHITECTURE -->
+  <!-- SLIDE 3: NOT AI SLOP -->
   <div class="slide" id="slide-3">
-    <h1 style="font-size: 5vw; margin-bottom: 40px; text-decoration: underline; text-decoration-thickness: 10px; text-decoration-color: var(--pink);">SYSTEM ARCHITECTURE</h1>
+    <h1 style="font-size: 5vw; background: red; color: #fff; padding: 20px 40px; box-shadow: 16px 16px 0px var(--fg); margin-bottom: 40px;">NOT ANOTHER "AI SLOP" WRAPPER</h1>
+    
+    <div style="display: flex; gap: 40px; width: 100%; max-width: 1300px;">
+      <div class="brutal-box solid" style="flex: 1; border: 8px dashed red; transform: rotate(-2deg);">
+        <h2 style="font-size: 2.5rem; color: red; margin-bottom: 20px; text-decoration: line-through;">THE COMPETITION</h2>
+        <ul style="font-size: 1.5rem; line-height: 1.8; font-family: 'Space Mono';">
+          <li>❌ Prompts ChatGPT with a blind PDF.</li>
+          <li>❌ "Trust me bro" hallucinated numbers.</li>
+          <li>❌ Obliterates financial tables.</li>
+          <li>❌ Generic, boring corporate UI.</li>
+          <li>❌ Zero citations. Pure vibes.</li>
+        </ul>
+      </div>
+      
+      <div style="font-size: 6rem; display: flex; align-items: center; font-weight: 900;">VS</div>
+      
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--lime); border: 8px solid #000; transform: rotate(1deg);">
+        <h2 style="font-size: 3rem; color: #000; margin-bottom: 20px; background: #fff; display: inline-block; padding: 5px;">MERIDIAN</h2>
+        <ul style="font-size: 1.5rem; line-height: 1.8; font-family: 'Space Mono'; font-weight: bold; color: #000;">
+          <li>⚡ Deterministic Layout-Aware Parsing.</li>
+          <li>⚡ Strict mathematical constraints.</li>
+          <li>⚡ Document-grounded RAG retrieval.</li>
+          <li>⚡ Page & Paragraph level citations.</li>
+          <li>⚡ High-speed Brutalist precision.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: SYSTEM ARCHITECTURE -->
+  <div class="slide" id="slide-4">
+    <h1 style="font-size: 4vw; margin-bottom: 40px; text-decoration: underline; text-decoration-thickness: 10px; text-decoration-color: var(--pink);">SYSTEM ARCHITECTURE</h1>
     
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; font-weight: bold; font-size: 1.5vw; width: 100%; max-width: 900px;">
-      <div class="brutal-box" style="background: var(--lime); padding: 15px 30px; width: 80%; text-align: center;">PDF Upload</div>
+      <div class="brutal-box color-bg" style="background: var(--lime); padding: 15px 30px; width: 80%; text-align: center;">PDF Upload</div>
       <div style="font-size: 2rem;">↓</div>
-      <div class="brutal-box" style="background: var(--cyan); padding: 15px 30px; width: 80%; text-align: center;">Layout-Aware Parsing (LayoutLM / Unstructured)</div>
+      <div class="brutal-box color-bg" style="background: var(--cyan); padding: 15px 30px; width: 80%; text-align: center;">Layout-Aware Parsing (LayoutLM / Unstructured)</div>
       <div style="font-size: 2rem;">↓</div>
-      <div class="brutal-box" style="background: #fff; padding: 15px 30px; width: 80%; text-align: center; border-style: dashed;">Semantic Chunking</div>
+      <div class="brutal-box solid" style="padding: 15px 30px; width: 80%; text-align: center; border-style: dashed;">Semantic Chunking</div>
       <div style="font-size: 2rem;">↓</div>
-      <div class="brutal-box" style="background: var(--yellow); padding: 15px 30px; width: 80%; text-align: center;">FAISS / Pinecone Vector DB (Metadata Query Routing)</div>
+      <div class="brutal-box color-bg" style="background: var(--yellow); padding: 15px 30px; width: 80%; text-align: center;">FAISS / Pinecone Vector DB (Metadata Query Routing)</div>
       <div style="font-size: 2rem;">↓</div>
-      <div class="brutal-box" style="background: var(--pink); padding: 15px 30px; width: 80%; text-align: center;">RAG Retrieval Engine</div>
+      <div class="brutal-box color-bg" style="background: var(--pink); padding: 15px 30px; width: 80%; text-align: center;">RAG Retrieval Engine</div>
       <div style="font-size: 2rem;">↓</div>
-      <div class="brutal-box" style="background: var(--fg); color: #fff; padding: 25px 40px; font-size: 2.5vw; box-shadow: 16px 16px 0px var(--lime); width: 100%; text-align: center; transform: rotate(1deg);">
+      <div class="brutal-box" style="background: #000; color: #fff; padding: 25px 40px; font-size: 2.5vw; box-shadow: 16px 16px 0px var(--lime); width: 100%; text-align: center; transform: rotate(1deg);">
         CITATION-GROUNDED FINANCIAL INTELLIGENCE
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 4: SOLVING THE TABLE PROBLEM -->
-  <div class="slide" id="slide-4">
-    <h1 style="font-size: 4vw; margin-bottom: 20px; background: var(--orange); padding: 20px; border: 6px solid #000; box-shadow: 12px 12px 0px #000; transform: rotate(-1deg);">SOLVING THE TABLE PROBLEM</h1>
+  <!-- SLIDE 5: SOLVING THE TABLE PROBLEM -->
+  <div class="slide" id="slide-5">
+    <h1 style="font-size: 4vw; margin-bottom: 20px; background: var(--orange); color: #000; padding: 20px; border: 6px solid #000; box-shadow: 12px 12px 0px var(--shadow-color); transform: rotate(-1deg);">SOLVING THE TABLE PROBLEM</h1>
     <p style="font-size: 2rem; font-weight: bold; font-family: 'Montserrat';">Traditional OCR breaks financial tables.</p>
     
     <div style="display: flex; gap: 60px; margin-top: 50px; width: 100%; max-width: 1200px;">
-      <div class="brutal-box" style="flex: 1; border-color: red; box-shadow: 12px 12px 0px red; transform: rotate(-2deg);">
+      <div class="brutal-box solid" style="flex: 1; border-color: red; box-shadow: 12px 12px 0px red; transform: rotate(-2deg);">
         <h3 style="margin-bottom: 20px; color: red; font-size: 1.5rem;">[ BEFORE ] BROKEN EXTRACTION</h3>
-        <div style="font-family: monospace; color: red; font-size: 1.5rem; background: #fff0f0; padding: 20px; border: 2px dashed red;">
+        <div style="font-family: monospace; color: red; font-size: 1.5rem; background: rgba(255,0,0,0.1); padding: 20px; border: 2px dashed red;">
           Revenue... 500<br>
           Cost... Margin...<br>
           400    20%<br><br>
@@ -220,14 +338,14 @@
       
       <div style="font-size: 5rem; display: flex; align-items: center; justify-content: center;">➔</div>
       
-      <div class="brutal-box" style="flex: 1; border-color: green; box-shadow: 12px 12px 0px green; background: var(--grid); transform: rotate(1deg);">
+      <div class="brutal-box solid" style="flex: 1; border-color: green; box-shadow: 12px 12px 0px green; transform: rotate(1deg);">
         <h3 style="margin-bottom: 20px; color: green; font-size: 1.5rem;">[ AFTER ] STRUCTURED PARSING</h3>
-        <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 1.5rem; background: #fff;" border="4">
-          <tr style="background: var(--fg); color: #fff;">
+        <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 1.5rem; background: var(--bg);" border="4">
+          <tr style="background: var(--fg); color: var(--bg);">
             <th style="padding: 10px;">Metric</th><th style="padding: 10px;">Value</th>
           </tr>
-          <tr><td style="padding: 10px; border-bottom: 2px solid #000;">Revenue</td><td style="padding: 10px; border-bottom: 2px solid #000;">$500M</td></tr>
-          <tr><td style="padding: 10px; border-bottom: 2px solid #000;">EBITDA</td><td style="padding: 10px; border-bottom: 2px solid #000;">$100M</td></tr>
+          <tr><td style="padding: 10px; border-bottom: 2px solid var(--fg);">Revenue</td><td style="padding: 10px; border-bottom: 2px solid var(--fg);">$500M</td></tr>
+          <tr><td style="padding: 10px; border-bottom: 2px solid var(--fg);">EBITDA</td><td style="padding: 10px; border-bottom: 2px solid var(--fg);">$100M</td></tr>
           <tr><td style="padding: 10px;">Margin</td><td style="padding: 10px;">20%</td></tr>
         </table>
         <p style="margin-top: 20px; font-weight: bold; color: green; font-size: 1.2rem;">✓ Preserved row/column relationships</p>
@@ -235,14 +353,14 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: MULTI-DOCUMENT REASONING -->
-  <div class="slide" id="slide-5">
-    <h1 style="font-size: 4vw; background: var(--pink); padding: 20px 40px; margin-bottom: 50px; box-shadow: 16px 16px 0px var(--fg); border: 6px solid #000; transform: rotate(-1deg);">MULTI-DOCUMENT REASONING</h1>
+  <!-- SLIDE 6: MULTI-DOCUMENT REASONING -->
+  <div class="slide" id="slide-6">
+    <h1 style="font-size: 4vw; background: var(--pink); color: #000; padding: 20px 40px; margin-bottom: 50px; box-shadow: 16px 16px 0px var(--shadow-color); border: 6px solid #000; transform: rotate(-1deg);">MULTI-DOCUMENT REASONING</h1>
     
     <div style="display: flex; gap: 40px; width: 100%; max-width: 1200px;">
-      <div class="brutal-box" style="flex: 1; background: var(--lime);">
-        <h2 style="border-bottom: 6px solid #000; padding-bottom: 15px; font-size: 2.5rem;">NVIDIA (2024)</h2>
-        <ul style="font-size: 1.5rem; line-height: 1.8; padding-left: 20px; font-family: 'Space Mono'; font-weight: bold; margin-top: 20px;">
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--lime);">
+        <h2 style="border-bottom: 6px solid #000; padding-bottom: 15px; font-size: 2.5rem; color: #000;">NVIDIA (2024)</h2>
+        <ul style="font-size: 1.5rem; line-height: 1.8; padding-left: 20px; font-family: 'Space Mono'; font-weight: bold; margin-top: 20px; color: #000;">
           <li>Revenue: $60.9B</li>
           <li>Op Margin: 72%</li>
           <li>Risk: Supply constraints</li>
@@ -251,9 +369,9 @@
       
       <div style="font-size: 6rem; display: flex; align-items: center; font-family: 'Montserrat'; font-weight: 900;">VS</div>
       
-      <div class="brutal-box" style="flex: 1; background: var(--cyan);">
-        <h2 style="border-bottom: 6px solid #000; padding-bottom: 15px; font-size: 2.5rem;">AMD (2024)</h2>
-        <ul style="font-size: 1.5rem; line-height: 1.8; padding-left: 20px; font-family: 'Space Mono'; font-weight: bold; margin-top: 20px;">
+      <div class="brutal-box color-bg" style="flex: 1; background: var(--cyan);">
+        <h2 style="border-bottom: 6px solid #000; padding-bottom: 15px; font-size: 2.5rem; color: #000;">AMD (2024)</h2>
+        <ul style="font-size: 1.5rem; line-height: 1.8; padding-left: 20px; font-family: 'Space Mono'; font-weight: bold; margin-top: 20px; color: #000;">
           <li>Revenue: $22.6B</li>
           <li>Op Margin: 46%</li>
           <li>Risk: Datacenter comp</li>
@@ -261,21 +379,50 @@
       </div>
     </div>
     
-    <div class="brutal-box" style="margin-top: 40px; background: var(--fg); color: #fff; width: 100%; max-width: 1200px; transform: rotate(1deg);">
+    <div class="brutal-box" style="margin-top: 40px; background: #000; color: #fff; width: 100%; max-width: 1200px; transform: rotate(1deg);">
       <h3 style="color: var(--yellow); font-size: 2rem; margin-bottom: 15px;">⚡ AI SYNTHESIS:</h3>
       <p style="font-size: 1.5rem; line-height: 1.6;">NVIDIA operating margins drastically outperform AMD, but supply chain concentration presents a singular critical failure point not present in AMD's diversified fabrication strategy.</p>
     </div>
   </div>
 
-  <!-- SLIDE 6: THE INSIGHT ENGINE -->
-  <div class="slide" id="slide-6">
+  <!-- SLIDE 7: THE QUIRK MODE (MEME) -->
+  <div class="slide" id="slide-7">
+    <div class="marquee">
+      <div class="marquee-content">
+        ! ! QUIRK MODE ACTIVATED ! ! STONKS GO UP ! ! WHY BE BORING WHEN YOU CAN BE BRUTAL ! ! QUIRK MODE ACTIVATED ! ! STONKS GO UP ! !
+      </div>
+    </div>
+    
+    <h1 class="title-huge" style="background: var(--pink); font-size: 6vw; margin-top: 100px;">FINANCE DOESN'T HAVE<br>TO BE BORING.</h1>
+    
+    <div style="display: flex; gap: 40px;">
+      <div class="terminal" style="font-size: 1.5rem; font-weight: bold; width: 500px; text-align: center;">
+        <pre style="margin: 0;">
+    /\
+   /  \
+  /    \
+ /      \
+/        \  📈
+  STONKS
+        </pre>
+      </div>
+      <div class="brutal-box color-bg" style="background: var(--yellow); width: 400px; transform: rotate(3deg); font-size: 1.5rem; font-weight: bold;">
+        <h2 style="color: #000; border-bottom: 4px solid #000; margin-bottom: 15px;">THE MERIDIAN VIBE</h2>
+        <p>Forget clinical white spreadsheets.</p>
+        <p>We built a platform that feels like hacking the mainframe.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: THE INSIGHT ENGINE -->
+  <div class="slide" id="slide-8">
     <div style="display: flex; width: 100%; max-width: 1400px; gap: 60px;">
       <div style="flex: 1.2; display: flex; flex-direction: column; justify-content: center;">
-        <h1 style="font-size: 5vw; background: var(--yellow); padding: 20px; border: 6px solid #000; box-shadow: 16px 16px 0px var(--fg);">THE INSIGHT<br>ENGINE</h1>
+        <h1 style="font-size: 5vw; background: var(--yellow); color: #000; padding: 20px; border: 6px solid var(--fg); box-shadow: 16px 16px 0px var(--shadow-color);">THE INSIGHT<br>ENGINE</h1>
         <p style="font-size: 2.5rem; font-weight: bold; margin-top: 40px; font-family: 'Montserrat';">Automated KPI Extraction</p>
         
-        <div class="brutal-box" style="background: var(--lime); font-size: 1.5rem; margin-top: 30px; border-style: dashed; padding: 20px;">
-          <span style="font-family: 'Space Mono'; font-weight: bold;">[FORMULA DETECTED]<br><br>Net Margin = Net Income / Revenue × 100</span>
+        <div class="brutal-box color-bg" style="background: var(--lime); font-size: 1.5rem; margin-top: 30px; border-style: dashed; padding: 20px;">
+          <span style="font-family: 'Space Mono'; font-weight: bold; color: #000;">[FORMULA DETECTED]<br><br>Net Margin = Net Income / Revenue × 100</span>
         </div>
       </div>
       
@@ -296,44 +443,44 @@
     </div>
   </div>
 
-  <!-- SLIDE 7: VERIFIABILITY & CITATIONS -->
-  <div class="slide" id="slide-7">
-    <div class="tape" style="top: 80px; width: 100%; background: red; color: white; text-align: center; font-size: 2rem;">IN FINANCE, HALLUCINATED NUMBERS ARE UNACCEPTABLE</div>
+  <!-- SLIDE 9: VERIFIABILITY & CITATIONS -->
+  <div class="slide" id="slide-9">
+    <div class="tape" style="top: 80px; width: 100%; background: red; color: white; text-align: center; font-size: 2rem; border-top: 5px dashed #000; border-bottom: 5px dashed #000;">IN FINANCE, HALLUCINATED NUMBERS ARE UNACCEPTABLE</div>
     <h1 style="font-size: 5vw; margin-top: 80px; margin-bottom: 60px;">VERIFIABILITY & CITATIONS</h1>
     
     <div style="display: flex; gap: 30px; align-items: center; justify-content: center; width: 100%; max-width: 1400px;">
-      <div class="brutal-box" style="background: var(--cyan); flex: 1;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 15px;">1. AI ANSWER</h3>
-        <p style="font-size: 1.5rem; font-weight: bold;">"Cloud revenue grew by 15%."</p>
+      <div class="brutal-box color-bg" style="background: var(--cyan); flex: 1;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #000;">1. AI ANSWER</h3>
+        <p style="font-size: 1.5rem; font-weight: bold; color: #000;">"Cloud revenue grew by 15%."</p>
       </div>
       <div style="font-size: 4rem; font-weight: bold;">➔</div>
-      <div class="brutal-box" style="background: var(--yellow); flex: 0.5; text-align: center;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 15px;">2. SOURCE</h3>
-        <p style="font-size: 2.5rem; font-weight: bold;">Page 42</p>
+      <div class="brutal-box color-bg" style="background: var(--yellow); flex: 0.5; text-align: center;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #000;">2. SOURCE</h3>
+        <p style="font-size: 2.5rem; font-weight: bold; color: #000;">Page 42</p>
       </div>
       <div style="font-size: 4rem; font-weight: bold;">➔</div>
-      <div class="brutal-box" style="background: var(--lime); position: relative; flex: 1.5;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 15px;">3. GROUNDED HIGHLIGHT</h3>
-        <p style="font-family: monospace; font-size: 1.2rem; line-height: 1.8; background: #fff; padding: 15px; border: 2px solid #000;">
+      <div class="brutal-box color-bg" style="background: var(--lime); position: relative; flex: 1.5;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #000;">3. GROUNDED HIGHLIGHT</h3>
+        <p style="font-family: monospace; font-size: 1.2rem; line-height: 1.8; background: #fff; color: #000; padding: 15px; border: 2px solid #000;">
           ...despite macroeconomic headwinds, our total <mark style="background: var(--pink); font-weight: bold; color: #fff; padding: 2px 5px;">cloud revenue grew by 15%</mark> year over year, driven by strong enterprise adoption...
         </p>
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 8: LIVE DASHBOARD / DEMO -->
-  <div class="slide" id="slide-8">
-    <h1 style="font-size: 4vw; background: var(--fg); color: #fff; padding: 20px 40px; border: 6px solid var(--lime); box-shadow: 16px 16px 0px var(--lime); margin-bottom: 40px;">LIVE DASHBOARD DEMO</h1>
+  <!-- SLIDE 10: LIVE DASHBOARD / DEMO -->
+  <div class="slide" id="slide-10">
+    <h1 style="font-size: 4vw; background: #000; color: #fff; padding: 20px 40px; border: 6px solid var(--lime); box-shadow: 16px 16px 0px var(--lime); margin-bottom: 40px;">LIVE DASHBOARD DEMO</h1>
     
-    <div style="width: 80%; height: 60%; border: 6px solid #000; display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; background: #fff; padding: 20px; box-shadow: 20px 20px 0px rgba(0,0,0,0.1);">
+    <div style="width: 80%; height: 60%; border: 6px solid var(--fg); display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; background: var(--bg); padding: 20px; box-shadow: 20px 20px 0px var(--shadow-color);">
       
       <!-- Chart Area -->
-      <div style="border: 5px solid #000; background: var(--grid); display: flex; flex-direction: column; justify-content: center; align-items: center; grid-row: span 2; position: relative; overflow: hidden;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 30px; background: #fff; padding: 10px; border: 3px solid #000;">Q4 AGGRESSIVE OUTLOOK</h2>
-        <div style="width: 80%; height: 50%; border-bottom: 6px solid #000; border-left: 6px solid #000; position: relative;">
-          <div style="position: absolute; bottom: 0; left: 10%; width: 20%; height: 40%; background: var(--cyan); border: 4px solid #000;"></div>
-          <div style="position: absolute; bottom: 0; left: 40%; width: 20%; height: 70%; background: var(--pink); border: 4px solid #000;"></div>
-          <div style="position: absolute; bottom: 0; left: 70%; width: 20%; height: 95%; background: var(--lime); border: 4px solid #000;"></div>
+      <div style="border: 5px solid var(--fg); background: var(--grid); display: flex; flex-direction: column; justify-content: center; align-items: center; grid-row: span 2; position: relative; overflow: hidden;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 30px; background: var(--bg); padding: 10px; border: 3px solid var(--fg);">Q4 AGGRESSIVE OUTLOOK</h2>
+        <div style="width: 80%; height: 50%; border-bottom: 6px solid var(--fg); border-left: 6px solid var(--fg); position: relative;">
+          <div style="position: absolute; bottom: 0; left: 10%; width: 20%; height: 40%; background: var(--cyan); border: 4px solid var(--fg);"></div>
+          <div style="position: absolute; bottom: 0; left: 40%; width: 20%; height: 70%; background: var(--pink); border: 4px solid var(--fg);"></div>
+          <div style="position: absolute; bottom: 0; left: 70%; width: 20%; height: 95%; background: var(--lime); border: 4px solid var(--fg);"></div>
         </div>
       </div>
 
@@ -345,16 +492,16 @@
       </div>
 
       <!-- Radar Area -->
-      <div style="border: 5px solid #000; background: var(--orange); display: flex; justify-content: center; align-items: center; text-align: center; color: #fff;">
-        <h2 style="font-size: 2rem;">SENTIMENT RADAR<br><br><span style="background: #000; color: var(--lime); padding: 10px 20px;">BULLISH</span></h2>
+      <div style="border: 5px solid var(--fg); background: var(--orange); display: flex; justify-content: center; align-items: center; text-align: center; color: #fff;">
+        <h2 style="font-size: 2rem;">SENTIMENT RADAR<br><br><span style="background: #000; color: var(--lime); padding: 10px 20px; border: 2px solid #fff;">BULLISH</span></h2>
       </div>
 
     </div>
   </div>
 
-  <!-- SLIDE 9: SCALE & FUTURE -->
-  <div class="slide" id="slide-9" style="background: var(--fg); color: var(--lime); background-image: none;">
-    <h1 style="font-size: 6vw; margin-bottom: 30px; text-shadow: 6px 6px 0px #000; border: 8px solid var(--lime); padding: 30px;">SCALE & FUTURE</h1>
+  <!-- SLIDE 11: SCALE & FUTURE -->
+  <div class="slide" id="slide-11" style="background: #000; color: var(--lime); background-image: none;">
+    <h1 style="font-size: 6vw; margin-bottom: 30px; text-shadow: 6px 6px 0px #fff; border: 8px solid var(--lime); padding: 30px;">SCALE & FUTURE</h1>
     
     <p style="font-size: 2.5vw; color: #fff; text-transform: uppercase; border-left: 12px solid var(--pink); padding-left: 30px; margin-bottom: 60px; font-family: 'Montserrat'; font-weight: 800;">
       From Static PDFs to<br>Autonomous Financial Agents.
@@ -365,14 +512,14 @@
       <div style="border: 3px solid var(--lime); padding: 15px 25px;">[ ] AUDIO-TO-TEXT INGESTION</div>
       <div style="border: 3px solid var(--lime); padding: 15px 25px;">[ ] LIVE MARKET SENTIMENT</div>
       <div style="border: 3px solid var(--cyan); padding: 15px 25px; color: var(--cyan);">[ ] ENTERPRISE-SCALE DEPLOYMENT</div>
-      <div style="border: 4px solid var(--lime); padding: 15px 25px; background: var(--lime); color: var(--fg); font-weight: bold; transform: scale(1.1) rotate(-1deg);">
+      <div style="border: 4px solid var(--lime); padding: 15px 25px; background: var(--lime); color: #000; font-weight: bold; transform: scale(1.1) rotate(-1deg);">
         [ ⚡ ] AUTONOMOUS AGENTS
       </div>
     </div>
   </div>
 
   <div class="controls">
-    <span id="slide-indicator">1 / 9</span> &nbsp;|&nbsp; USE &larr; &rarr; ARROWS
+    <span id="slide-indicator">1 / 11</span> &nbsp;|&nbsp; USE &larr; &rarr; ARROWS
   </div>
 
   <script>
@@ -397,6 +544,18 @@
       if(e.key === 'ArrowRight' || e.key === 'Space' || e.key === 'Enter') showSlide(currentSlide + 1);
       if(e.key === 'ArrowLeft') showSlide(currentSlide - 1);
     });
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      if (document.body.classList.contains('dark')) {
+        btn.innerHTML = '☀️ Light Mode';
+        btn.style.background = 'var(--cyan)';
+      } else {
+        btn.innerHTML = '🌑 Dark Mode';
+        btn.style.background = 'var(--pink)';
+      }
+    }
   </script>
 </body>
 </html>
