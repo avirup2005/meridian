@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pdfplumber
+google-genai
+python-dotenv
+faiss-cpu
+sentence-transformers
+numpy
+duckduckgo-search
