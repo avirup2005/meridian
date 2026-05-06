@@ -1,5 +1,7 @@
 import axios from "axios"
 
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || "";
+
 /**
  * Upload a PDF file to the backend for parsing and vector indexing.
  * @param {File} file
